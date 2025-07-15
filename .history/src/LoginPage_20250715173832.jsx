@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const[name,setName]=useState('');
-    console.log("name ", name )
     const[password, setPassword]= useState('');
-    console.log("password", password)
     const navigate =useNavigate()
 
     const handleSubmit =(e)=>{

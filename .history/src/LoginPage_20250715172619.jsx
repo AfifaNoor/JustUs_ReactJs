@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const[name,setName]=useState('');
-    console.log("name ", name )
     const[password, setPassword]= useState('');
-    console.log("password", password)
     const navigate =useNavigate()
 
     const handleSubmit =(e)=>{
@@ -30,7 +28,7 @@ const LoginPage = () => {
 
       // Optional: Redirect after 2 seconds
       setTimeout(() => {
-        navigate("/home"); // Or wherever you want to navigate
+        navigate("/"); // Or wherever you want to navigate
       }, 2000);
     } else {
       toast.error("Invalid Credentials", {

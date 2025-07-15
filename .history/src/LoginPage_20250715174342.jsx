@@ -8,7 +8,7 @@ const LoginPage = () => {
     const[name,setName]=useState('');
     console.log("name ", name )
     const[password, setPassword]= useState('');
-    console.log("password", password)
+    console.log("password",password)
     const navigate =useNavigate()
 
     const handleSubmit =(e)=>{
