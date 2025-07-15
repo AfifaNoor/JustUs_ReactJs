@@ -1,0 +1,38 @@
+.login-container {
+  width: 100%;
+  height: 100vh;   
+  opacity: 1;   
+  transform: rotate(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#FFEFF4, #FDEAEF);
+  flex-direction: column;
+  position: relative;
+
+ 
+}
+
+h1,h2,h3 {
+  color: #A4004E;
+}
+
+.btn-login {
+  background: linear-gradient(180deg, #D9236E 0%, #A4004E 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.form-container{
+    width: 400px;
+    height: 430px;
+    border-radius: 12px;
+    padding: 32px;
+    gap:10px;
+    flex-direction: column;
+    display: flex;
+    z-index: 1;
+    
+}

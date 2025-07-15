@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginPage from './LoginPage'
-import {RouterProvider} from 'react-router-dom'
-import Router from'./Router'
+import {RouterProvider} from 
+
 const App = () => {
   return (
    <>
