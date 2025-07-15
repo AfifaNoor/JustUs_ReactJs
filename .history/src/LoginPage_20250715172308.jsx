@@ -50,7 +50,6 @@ const LoginPage = () => {
       type='text'
       placeholder='Username'
       value={name}
-      onChange={(e)=>setName(e.target.value)}
       required
 
       />
@@ -59,7 +58,6 @@ const LoginPage = () => {
       type='password'
       placeholder='Password'
       value={password}
-      onChange={(e)=>setPassword(e.target.value)}
       required
         
       />
@@ -67,22 +65,9 @@ const LoginPage = () => {
       className='btn-login'>
        Login</button>
 
-       <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        /><ToastContainer />
-
       </form>
     </div>
   )
 }
 
-export default LoginPage;
+export default LoginPage

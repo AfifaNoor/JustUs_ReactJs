@@ -4,7 +4,7 @@ import LoginPage from './LoginPage';
 import HomePage from './HomePage';
 
 const Router =  createBrowserRouter(
-    createRoutesFromElements(
+    createRoutesFromElememnts(
         <>
             <Route path='/' element={<HomePage/>}/>
             <Route path='login-page' element= {<LoginPage/>}/>

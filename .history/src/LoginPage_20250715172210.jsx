@@ -15,25 +15,7 @@ const LoginPage = () => {
     const hardcorePassword = 'afira1234'
 
     if (name ===hardcoreName && password===hardcorePassword){
-        toast.success("Login Successful!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
 
-      // Optional: Redirect after 2 seconds
-      setTimeout(() => {
-        navigate("/"); // Or wherever you want to navigate
-      }, 2000);
-    } else {
-      toast.error("Invalid Credentials", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-    
         
     }
     }
@@ -50,7 +32,6 @@ const LoginPage = () => {
       type='text'
       placeholder='Username'
       value={name}
-      onChange={(e)=>setName(e.target.value)}
       required
 
       />
@@ -59,7 +40,6 @@ const LoginPage = () => {
       type='password'
       placeholder='Password'
       value={password}
-      onChange={(e)=>setPassword(e.target.value)}
       required
         
       />
@@ -67,22 +47,9 @@ const LoginPage = () => {
       className='btn-login'>
        Login</button>
 
-       <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        /><ToastContainer />
-
       </form>
     </div>
   )
 }
 
-export default LoginPage;
+export default LoginPage

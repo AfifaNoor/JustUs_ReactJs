@@ -50,7 +50,6 @@ const LoginPage = () => {
       type='text'
       placeholder='Username'
       value={name}
-      onChange={(e)=>setName(e.target.value)}
       required
 
       />
@@ -59,7 +58,6 @@ const LoginPage = () => {
       type='password'
       placeholder='Password'
       value={password}
-      onChange={(e)=>setPassword(e.target.value)}
       required
         
       />
@@ -85,4 +83,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage;
+export default LoginPage
