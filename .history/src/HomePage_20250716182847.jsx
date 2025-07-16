@@ -65,25 +65,6 @@ const HomePage = () => {
              <li>Jewellery</li>
           </ul>
         </div>
-        <div className='his-wardrobe-section'>
-    <h3>His Wardrobe</h3>
-    <ul className='category-list'>
-      <li>Shirt</li>
-      <li>T-Shirt</li>
-      <li>Jeans</li>
-      <li>Trouser</li>
-      <li>Half Pant</li>
-      <li>Footwear</li>
-      <li>Sunglasses</li>
-      <li>Gym Accessories</li>
-      <li>Watches</li>
-      <li>Kurta</li>
-      <li>Perfume</li>
-      <li>Suits</li>
-      <li>Skincare</li>
-      <li>Tech Accessories</li>
-    </ul>
-  </div>
       </div>
     </div>
   );

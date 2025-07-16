@@ -39,51 +39,15 @@ const HomePage = () => {
         <button className='menu-button' >
           <span className='menu-icon'>☰</span>
         </button>
-        <div className='wardrobe-toggle'>
-          <button className='wardrobe-btn'>His</button>
-          <button className='wardrobe-btn'>Her</button>
+        <div className='wardrobe-button'>
+          <button className='wardrobe-btn'></button>
         </div>
-        <div className='her-wardrobe-section'>
-          <h3>Her wardrobe</h3>
-          <ul className='category-list'>
-          <li>
-            Sex Dresses
-            <ul className='subcategory-list'>
-              <li>Babydoll</li>
-              <li>Revealing Dresses</li>
-              <li>Saree & Blouse</li>
-            </ul>
-            </li>
-             <li>Sex Toys</li>
-             <li>Western Wear</li>
-             <li>Desi Diva</li>
-             <li>Dream Dress</li>
-             <li>Wedding Dress</li>
-             <li>Footwear</li>
-             <li>Bags</li>
-             <li>Skincare & Beauty</li>
-             <li>Jewellery</li>
-          </ul>
-        </div>
-        <div className='his-wardrobe-section'>
-    <h3>His Wardrobe</h3>
-    <ul className='category-list'>
-      <li>Shirt</li>
-      <li>T-Shirt</li>
-      <li>Jeans</li>
-      <li>Trouser</li>
-      <li>Half Pant</li>
-      <li>Footwear</li>
-      <li>Sunglasses</li>
-      <li>Gym Accessories</li>
-      <li>Watches</li>
-      <li>Kurta</li>
-      <li>Perfume</li>
-      <li>Suits</li>
-      <li>Skincare</li>
-      <li>Tech Accessories</li>
-    </ul>
-  </div>
+        <ul className='wardrobe-section'>
+          <li>Dashboard</li>
+          <li>Messages</li>
+          <li>Settings</li>
+          <li>Help</li>
+        </ul>
       </div>
     </div>
   );

@@ -36,38 +36,31 @@ const HomePage = () => {
       </div>
 
       <div className='sidebar'>
-        <button className='menu-button' >
+        <button >
           <span className='menu-icon'>☰</span>
         </button>
-        <div className='wardrobe-toggle'>
-          <button className='wardrobe-btn'>His</button>
-          <button className='wardrobe-btn'>Her</button>
-        </div>
-        <div className='her-wardrobe-section'>
-          <h3>Her wardrobe</h3>
-          <ul className='category-list'>
-          <li>
-            Sex Dresses
-            <ul className='subcategory-list'>
-              <li>Babydoll</li>
-              <li>Revealing Dresses</li>
-              <li>Saree & Blouse</li>
-            </ul>
-            </li>
-             <li>Sex Toys</li>
-             <li>Western Wear</li>
-             <li>Desi Diva</li>
-             <li>Dream Dress</li>
-             <li>Wedding Dress</li>
-             <li>Footwear</li>
-             <li>Bags</li>
-             <li>Skincare & Beauty</li>
-             <li>Jewellery</li>
-          </ul>
-        </div>
-        <div className='his-wardrobe-section'>
+        <div className='wardrobe-section'>
+    <h3>Her Wardrobe</h3>
+    <ul className='sidebar-menu'>
+      <li>Sex Dresses</li>
+      <li>Babydoll</li>
+      <li>Revealing Dresses</li>
+      <li>Saree & Blouses</li>
+      <li>Sex Toys</li>
+      <li>Western Wear</li>
+      <li>Desi Diva</li>
+      <li>Dream Dress</li>
+      <li>Wedding Dress</li>
+      <li>Footwear</li>
+      <li>Bags</li>
+      <li>Skincare & Beauty</li>
+      <li>Jewellery</li>
+    </ul>
+  </div>
+
+  <div className='wardrobe-section'>
     <h3>His Wardrobe</h3>
-    <ul className='category-list'>
+    <ul className='sidebar-menu'>
       <li>Shirt</li>
       <li>T-Shirt</li>
       <li>Jeans</li>
@@ -84,7 +77,7 @@ const HomePage = () => {
       <li>Tech Accessories</li>
     </ul>
   </div>
-      </div>
+</div>
     </div>
   );
 };
