@@ -1,17 +1,20 @@
-// Router.jsx
 import React from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, Navigate } from 'react-router-dom';
-import LoginPage from './LoginPage';
-import HomePage from './HomePage';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom';
 
-const router = createBrowserRouter(
+import HomePage from './HomePage';
+import LoginPage from './LoginPage';
+
+const Router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/login-page" element={<LoginPage />} />
-      <Route index element={<Navigate to="login-page" />} />
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
     </>
   )
 );
 
-export default router;
+export default Router;
