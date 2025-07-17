@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './HomePage.css';
-import avatar from './Assets/AfifaNoor.png';
+import avatar from './Assets/avatar.png';
 import bell from './Assets/notificationbell.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,14 +10,11 @@ const HomePage = () => {
   return (
     <div className='home-page'>
       <div className='header'>
-        {/* <h1>Homepage</h1> */}
-        <div className='logo'>
-          <h1> JustUs </h1>
-        </div>
+        <h1>Homepage</h1>
         <div className='header-right'>
           <div className='bell-icon'>
             <img src={bell} alt='Notification Bell' />
-            {/* <span className='notification-count'>3</span> */}
+            <span className='notification-count'>3</span>
           </div>
           <div className='avatar'>
             <div className='dropdown'>

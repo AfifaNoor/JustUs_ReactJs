@@ -52,15 +52,5 @@ h1,h2,h3 {
 }
 
 .avatar{
-  position: relative;
 
-}
-.dropdown{
-  position: relative;
-}
-
-.avatar:hover{
-  outline: none;
-  border-color: #A4004E;
-  box-shadow: 0 0 0 3px rgba(164, 0, 78, 0.2);
 }

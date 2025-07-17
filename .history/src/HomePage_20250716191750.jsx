@@ -17,7 +17,7 @@ const HomePage = () => {
         <div className='header-right'>
           <div className='bell-icon'>
             <img src={bell} alt='Notification Bell' />
-            {/* <span className='notification-count'>3</span> */}
+            <span className='notification-count'>3</span>
           </div>
           <div className='avatar'>
             <div className='dropdown'>
