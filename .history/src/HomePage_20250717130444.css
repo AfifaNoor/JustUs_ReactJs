@@ -33,16 +33,13 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Pacifico', cursive;
-  font-size: 24px;
+  font-size: 10px;
   color: #A4004E;
   letter-spacing: 1px;
   /* user-select: none; */
 }
-.p{
-  font-size: 16px;
-  font-weight: 700  ;
-}
 
+/* ========== Header Right ========== */
 .header-right {
   display: flex;
   align-items: center;

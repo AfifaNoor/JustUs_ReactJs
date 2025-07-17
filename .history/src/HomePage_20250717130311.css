@@ -17,7 +17,7 @@ body {
   top: 0;
   left: 250px;
   right: 0;
-  height: 50px;
+  height: 60px;
   background: rgba(255, 255, 255, 0.9);
   /* backdrop-filter: blur(10px); */
   display: flex;
@@ -38,11 +38,8 @@ body {
   letter-spacing: 1px;
   /* user-select: none; */
 }
-.p{
-  font-size: 16px;
-  font-weight: 700  ;
-}
 
+/* ========== Header Right ========== */
 .header-right {
   display: flex;
   align-items: center;

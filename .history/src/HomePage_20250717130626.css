@@ -38,11 +38,11 @@ body {
   letter-spacing: 1px;
   /* user-select: none; */
 }
-.p{
-  font-size: 16px;
-  font-weight: 700  ;
+.h3{
+  font-size: 18px;
 }
 
+/* ========== Header Right ========== */
 .header-right {
   display: flex;
   align-items: center;

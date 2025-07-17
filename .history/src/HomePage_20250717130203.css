@@ -1,4 +1,4 @@
-
+/* ========== Global Styles ========== */
 body {
   margin: 0;
   padding: 0;
@@ -6,20 +6,23 @@ body {
   background-color: #FFEFF4;
   color: #2C3E50;
 }
+
+/* Base layout */
 .home-page {
   display: flex;
   min-height: 100vh;
   background: linear-gradient(#FFEFF4, #FDEAEF);
 }
 
+/* ========== Header ========== */
 .header {
   position: fixed;
   top: 0;
   left: 250px;
   right: 0;
-  height: 50px;
+  height: 60px;
   background: rgba(255, 255, 255, 0.9);
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -36,13 +39,10 @@ body {
   font-size: 24px;
   color: #A4004E;
   letter-spacing: 1px;
-  /* user-select: none; */
-}
-.p{
-  font-size: 16px;
-  font-weight: 700  ;
+  user-select: none;
 }
 
+/* ========== Header Right ========== */
 .header-right {
   display: flex;
   align-items: center;

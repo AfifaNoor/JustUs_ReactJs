@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className='header'>
         {/* <h1>Homepage</h1> */}
         <div className='logo'>
-          <p> JustUs </p>
+          <h3> JustUs </h3>
         </div>
         <div className='header-right'>
           <div className='bell-icon'>
