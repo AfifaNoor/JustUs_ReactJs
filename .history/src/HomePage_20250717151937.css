@@ -1,4 +1,4 @@
-
+/* Reset & Base Styles */
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +7,7 @@ body {
   color: #2C3E50;
 }
 
+/* Page Container */
 .home-page {
   display: flex;
   flex-direction: column;
@@ -15,7 +16,7 @@ body {
   overflow-x: hidden;
 }
 
-
+/* Header/Navbar */
 .header {
   position: fixed;
   top: 0;
@@ -42,14 +43,14 @@ body {
   letter-spacing: 1px;
 }
 
-
+/* Header Right Section */
 .header-right {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-
+/* Notification Icon */
 .bell-icon {
   position: relative;
 }
@@ -67,7 +68,7 @@ body {
   transform: scale(1.1);
 }
 
-
+/* Avatar */
 .avatar img {
   width: 36px;
   height: 36px;
@@ -82,7 +83,7 @@ body {
   transform: scale(1.1);
 }
 
-
+/* Main Content Area */
 .main-content {
   margin-top: 100px;
   display: flex;
@@ -92,7 +93,7 @@ body {
   padding: 40px 20px;
 }
 
-
+/* Wardrobe Toggle Section */
 .wardrobe-toggle {
   display: flex;
   flex-wrap: wrap;
@@ -100,6 +101,7 @@ body {
   justify-content: center;
 }
 
+/* Wardrobe Buttons */
 .wardrobe-btn {
   padding: 20px;
   background: linear-gradient(180deg, #D9236E 0%, #A4004E 100%);
@@ -123,7 +125,7 @@ body {
   box-shadow: 0 12px 28px rgba(138, 0, 64, 0.3);
 }
 
-
+/* Typography */
 h1, h2, h3 {
   margin: 0;
   color: #A4004E;

@@ -23,8 +23,8 @@ const HomePage = () => {
       </header>
       <div className="main-content">
         <div className="wardrobe-toggle">
-          <button className="wardrobe-btn" onClick={() => navigate('./his-category')}>His Wardrobe</button>
-          <button className="wardrobe-btn"  onClick={() => navigate('./her-category')}>Her Wardrobe</button>
+          <button className="wardrobe-btn" onClick={() => navigate('./her-category')}>His Wardrobe</button>
+          <button className="wardrobe-btn">Her Wardrobe</button>
         </div>
       </div>
     </div>

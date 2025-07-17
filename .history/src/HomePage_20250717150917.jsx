@@ -1,11 +1,9 @@
 import React from "react";
 import "./HomePage.css";
-import bellIcon from "./Assets/notificationbell.png"; 
-import avatarImage from "./Assets/avatar.png"; 
-import { useNavigate } from "react-router-dom";
+import bellIcon from "./Assets/notificationbell.png"; // adjust path
+import avatarImage from "./Assets/avatar.png"; // adjust path
 
 const HomePage = () => {
-  const navigate=useNavigate();
   return (
     <div className="home-page">
       <header className="header">
@@ -14,7 +12,7 @@ const HomePage = () => {
         <div className="header-right">
           <div className="bell-icon">
             <img src={bellIcon} alt="Notifications" />
-            {/* <div className="notification-count">3</div> */}
+            <div className="notification-count">3</div>
           </div>
           <div className="avatar">
             <img src={avatarImage} alt="Profile" />
@@ -23,8 +21,8 @@ const HomePage = () => {
       </header>
       <div className="main-content">
         <div className="wardrobe-toggle">
-          <button className="wardrobe-btn" onClick={() => navigate('./his-category')}>His Wardrobe</button>
-          <button className="wardrobe-btn"  onClick={() => navigate('./her-category')}>Her Wardrobe</button>
+          <button className="wardrobe-btn">His Wardrobe</button>
+          <button className="wardrobe-btn">Her Wardrobe</button>
         </div>
       </div>
     </div>
