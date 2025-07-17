@@ -1,8 +1,6 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const SubCategory = () => {
-  const navigate=useNavigate();
   return (
     <div className='container'>
     <div className='back-btn' onClick={() => navigate('./her-category')}>
