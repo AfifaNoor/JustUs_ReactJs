@@ -47,14 +47,14 @@ const HomePage = () => {
           <h3>Her wardrobe</h3>
           <ul className='category-list'>
           <li>
-            Sex Dresses
+            Cool Dresses
             <ul className='subcategory-list'>
               <li>Babydoll</li>
               <li>Revealing Dresses</li>
               <li>Saree & Blouse</li>
             </ul>
             </li>
-             <li>Sex Toys</li>
+             <li>Cool Toys</li>
              <li>Western Wear</li>
              <li>Desi Diva</li>
              <li>Dream Dress</li>

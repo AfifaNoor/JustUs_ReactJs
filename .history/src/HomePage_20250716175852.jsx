@@ -42,11 +42,11 @@ const HomePage = () => {
         <div className='wardrobe-section'>
     <h3>Her Wardrobe</h3>
     <ul className='sidebar-menu'>
-      <li>Sex Dresses</li>
+      <li>Cool Dresses</li>
       <li>Babydoll</li>
       <li>Revealing Dresses</li>
       <li>Saree & Blouses</li>
-      <li>Sex Toys</li>
+      <li>Cool Toys</li>
       <li>Western Wear</li>
       <li>Desi Diva</li>
       <li>Dream Dress</li>

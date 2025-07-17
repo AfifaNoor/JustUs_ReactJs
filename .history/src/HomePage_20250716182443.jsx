@@ -46,7 +46,7 @@ const HomePage = () => {
         <div className='her-wardrobe-section'>
           <h3>Her wardrobe</h3>
           <ul className='category-list'>
-            Sex Dresses
+            Cool Dresses
             <li className='subcategory-list'></li>
           </ul>
         </div>
