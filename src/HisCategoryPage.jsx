@@ -6,7 +6,7 @@ const HisCategoryPage = () => {
   return (
     <div className='category-container'>
     <div className='category-list'>
-    <div className='back-btn' onClick={() => navigate('/')}>
+    <div className='back-btn' onClick={() => navigate('/home')}>
         ←
     </div>
     <button className='category-btn'>Shirt</button>

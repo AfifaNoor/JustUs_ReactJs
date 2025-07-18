@@ -14,13 +14,11 @@ import SubCategory from './SubCategory';
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/her-category" element={<HerCategoryPage/>}/>
-      <Route path="/his-category" element={<HisCategoryPage/>}/>
-      <Route path="her-category/subcategory" element={<SubCategory/>}/>
-
-
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/her-category" element={<HerCategoryPage />} />
+      <Route path="/his-category" element={<HisCategoryPage />} />
+      <Route path="/her-category/subcategory" element={<SubCategory />} />
     </>
   )
 );
