@@ -9,14 +9,14 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
-
+  // ✅ Fetch user data from backend
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/login");
-        setUsers(response.data); 
+        const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/login");
+        setUsers(response.data); // response.data should be an array of user objects
       } catch (error) {
-        alert("Error fetching user data.");
+        alert("Invalid");
         console.error("Fetch Error:", error);
       }
     };
@@ -50,7 +50,7 @@ const handleSubmit = (e) => {
           className='form-input' 
           type='text'
           placeholder='Username'
-          value={name}
+          value={users}
           onChange={(e) => setName(e.target.value)}
           required
         />

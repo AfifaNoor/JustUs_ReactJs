@@ -51,7 +51,7 @@
   background-color: #FDEAEF;
   color: #2C3E50;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  margin-top: auto;
 }
 
 .form-input::placeholder {

@@ -9,12 +9,12 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
-
+  // ✅ Fetch user data from backend
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/login");
-        setUsers(response.data); 
+        const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/login");
+        setUsers(response.data); // response.data should be an array of user objects
       } catch (error) {
         alert("Error fetching user data.");
         console.error("Fetch Error:", error);

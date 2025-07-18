@@ -1,34 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "./LoginPage.css";
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const LoginPage = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
 
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/login");
-        setUsers(response.data); 
-      } catch (error) {
-        alert("Error fetching user data.");
-        console.error("Fetch Error:", error);
-      }
-    };
-    fetchUsers();
-  }, []);
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // const hardcoreName = "Afira";
     // const hardcorePassword = "afira1234";
-
     // if (name === hardcoreName && password === hardcorePassword) {
     //   alert("Login Successful!");
     //   setTimeout(() => {
@@ -37,13 +20,15 @@ const handleSubmit = (e) => {
     // } else {
     //   alert("Invalid Credentials");
     // }
+
+    
   };
 
   return (
     <div className='login-container'>
       <form className='form-container' onSubmit={handleSubmit}>
         <div className='logo'>
-          <h1>JustUs</h1>
+          <h1> JustUs </h1>
         </div>
 
         <input 
@@ -62,7 +47,7 @@ const handleSubmit = (e) => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className='btn-login'>Login</button>
+        <button className='btn-login'>Login</button>
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ const CategoryPage = () => {
     <div className='back-btn' onClick={() => navigate("/home")}>
         ←
     </div>
-    <button className='category-btn' onClick={() => navigate('./her-category/subcategory')}>Cool Dress</button>
+    <button className='category-btn' onClick={() => navigate('./subcategory')}>Cool Dress</button>
     <button className='category-btn'>Western Dress</button>
     <button className='category-btn'>Desi Diva</button>
     <button className='category-btn'>Dream Dress</button>

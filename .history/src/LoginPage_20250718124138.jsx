@@ -9,12 +9,12 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
-
+  // ✅ Fetch user data from backend
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/login");
-        setUsers(response.data); 
+        const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/login");
+        setUsers(response.data); // response.data should be an array of user objects
       } catch (error) {
         alert("Error fetching user data.");
         console.error("Fetch Error:", error);
@@ -23,20 +23,21 @@ const LoginPage = () => {
     fetchUsers();
   }, []);
 
-const handleSubmit = (e) => {
+  // ✅ Handle form submit
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // const hardcoreName = "Afira";
-    // const hardcorePassword = "afira1234";
+    // Simple client-side check
+    const user = users.find(user => user.name === name && user.password === password);
 
-    // if (name === hardcoreName && password === hardcorePassword) {
-    //   alert("Login Successful!");
-    //   setTimeout(() => {
-    //     navigate("/home");
-    //   }, 1000);
-    // } else {
-    //   alert("Invalid Credentials");
-    // }
+    if (user) {
+      alert("Login Successful!");
+      setTimeout(() => {
+        navigate("/home");
+      }, 500);
+    } else {
+      alert("Invalid Credentials");
+    }
   };
 
   return (

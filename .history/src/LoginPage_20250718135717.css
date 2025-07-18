@@ -41,17 +41,15 @@
 }
 
 
-.form-input {
+.form-container {
+  background-color: #FFFFFF;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(164, 0, 78, 0.15);
   width: 100%;
-  padding: 14px 18px;
-  margin-bottom: 20px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  font-size: 1rem;
-  background-color: #FDEAEF;
-  color: #2C3E50;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
 }
 
 .form-input::placeholder {
