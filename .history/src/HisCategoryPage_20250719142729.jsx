@@ -1,0 +1,52 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+const HisCategoryPage = () => {
+  const [categories,setCategories]= useState([]);
+  const navigate=useNavigate();
+  console.log(categories,"categories")
+
+ useEffect (()=>{
+  const fetchCategories = async ()=>{
+    try{
+      const response= await axios.get("https://mediatracker-dp6t.onrender.com/api/categories/his")
+      setCategories(response.data)
+      console.log('response',response)
+    }catch(error){
+      console("error")
+    }
+  }
+  fetchCategories();
+ }, []);
+  return (
+    <div className='category-container'>
+    <div className='category-list'>
+    <div className='back-btn' onClick={() => navigate('/home')}>
+        ←
+    </div>
+    {/* <button className='category-btn'>Shirt</button>
+    <button className='category-btn'>T-Shirt</button>
+    <button className='category-btn'>Jeans</button>
+    <button className='category-btn'>Trouser</button>
+    <button className='category-btn'>Half Pant</button>
+    <button className='category-btn'>Footwear</button>
+    <button className='category-btn'>SunGlasses</button>
+    <button className='category-btn'>Gym Accessories </button>
+    <button className='category-btn'>Watches</button>
+    <button className='category-btn'>Kurta</button>
+    <button className='category-btn'>Perfumes</button>
+    <button className='category-btn'>Suits</button>
+    <button className='category-btn'>Skincare & Beauty </button>
+    <button className='category-btn'>Tech Accessories</button> */}
+    <div >
+      {categories.map((value)=>(
+        <button className='category-btn'>{value.name}</button>
+      ))}
+    </div>
+    </div>
+    </div>
+  )
+}
+
+export default HisCategoryPage
