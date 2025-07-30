@@ -7,11 +7,6 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
 const [dropdownOpen, setDropdownOpen] = useState(false);
 const navigate=useNavigate();
-
-
-const handleDropdown =()=>{
-    
-}
   
   
   

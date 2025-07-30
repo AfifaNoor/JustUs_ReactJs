@@ -20,8 +20,8 @@ const SubCategory = () => {
         const filterCategory = response.data.find(
           (category) => category.name.toLowerCase() === name.toLowerCase()
         );
-        setSubcategory(filterCategory.subcategories);
-        console.log(setSubcategory ,'subcategory')
+        setSubcategory(filterCategory.subcate);
+        console.log(setSubcategory ,'subcategory' )
 
         
         
@@ -35,9 +35,9 @@ const SubCategory = () => {
   }, [name]);
   return (
     <div className='container'>
-   <div className='back-btn' onClick={() => navigate(-1)}>
-    ←
-</div>
+    <div className='back-btn' onClick={() => navigate('./her-category')}>
+        ←
+    </div>
     <h2>{name}</h2>
     <ul className='subcategory-list'>
         {subcategory.length > 0 ? (

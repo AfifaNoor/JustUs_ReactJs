@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HomePage.css";
 import bellIcon from "./Assets/notificationbell.png"; 
 import avatarImage from "./Assets/avatar.png"; 
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-const [dropdownOpen, setDropdownOpen] = useState(false);
-const navigate=useNavigate();
-
-
-const handleDropdown =()=>{
-    
-}
-  
-  
-  
+  const navigate=useNavigate();
   return (
     <div className="home-page">
       <header className="header">
       <div className="dropdown-container">
-      <button className="dropdown-btn"> 
-        Add Product
-        </button>
+        <button className="dropdown-btn"> Add Product</button>
         <ul className="dropdown-menu">
           <li>His Product</li>
-          <li>Her product</li>
+          <li>her product</li>
         </ul>
       </div>
         <div className="logo">JustUs</div>

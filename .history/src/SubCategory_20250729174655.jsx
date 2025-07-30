@@ -20,8 +20,8 @@ const SubCategory = () => {
         const filterCategory = response.data.find(
           (category) => category.name.toLowerCase() === name.toLowerCase()
         );
-        setSubcategory(filterCategory.subcategories);
-        console.log(setSubcategory ,'subcategory')
+        setSubcategory(filterCategory);
+        console.log(setSubcategory ,'subcategory' )
 
         
         
@@ -35,19 +35,16 @@ const SubCategory = () => {
   }, [name]);
   return (
     <div className='container'>
-   <div className='back-btn' onClick={() => navigate(-1)}>
-    ←
-</div>
-    <h2>{name}</h2>
+    <div className='back-btn' onClick={() => navigate('./her-category')}>
+        ←
+    </div>
     <ul className='subcategory-list'>
-        {subcategory.length > 0 ? (
-          subcategory.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))
-        ) : (
-          <li>No subcategories available</li>
-        )}
-      </ul>
+      { subcategory.map((item, index)=>(
+        <li key={index}>{item}</li>
+      ))
+
+      }
+    </ul>
 
     </div>
   )

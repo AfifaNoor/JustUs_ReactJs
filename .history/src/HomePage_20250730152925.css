@@ -117,7 +117,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-
 .wardrobe-btn:hover {
   background: linear-gradient(180deg, #E03A7A 0%, #8A0040 100%);
   transform: translateY(-4px);
@@ -132,42 +131,16 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.dropdown-container {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-btn {
-  padding: 8px 12px;
-  background: linear-gradient(180deg, #D9236E 0%, #A4004E 100%);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: poppins;
-  font-weight: 500;
-  font-size: 15px;
-  
-}
-.dropdown-menu {
+.dropdown-btn{
+  color: #FDEAEF;
+  font-family: Bohemian Soul;
   position: absolute;
-  top: 38px;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 180px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
-}
-.dropdown-menu li {
-  padding: 10px;
-  cursor: pointer;
-  font-family: Poppins;
-}
+  right: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FDEAEF;
+  letter-spacing: 1px;
 
-.dropdown-menu li:hover {
-  background-color: #f0f0f0;
 }

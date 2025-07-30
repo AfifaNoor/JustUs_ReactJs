@@ -35,10 +35,10 @@ const SubCategory = () => {
   }, [name]);
   return (
     <div className='container'>
-   <div className='back-btn' onClick={() => navigate(-1)}>
-    ←
-</div>
-    <h2>{name}</h2>
+    <div className='back-btn' onClick={() => navigate('./her-category')}>
+        ←
+    </div>
+    {/* <h2>{name}</h2> */}
     <ul className='subcategory-list'>
         {subcategory.length > 0 ? (
           subcategory.map((item, index) => (

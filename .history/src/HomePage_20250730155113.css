@@ -116,7 +116,28 @@ body {
   text-align: center;
   letter-spacing: 0.5px;
 }
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
 
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
 
 .wardrobe-btn:hover {
   background: linear-gradient(180deg, #E03A7A 0%, #8A0040 100%);
@@ -144,30 +165,4 @@ h1, h2, h3 {
   border-radius: 4px;
   cursor: pointer;
   font-family: poppins;
-  font-weight: 500;
-  font-size: 15px;
-  
-}
-.dropdown-menu {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 180px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
-}
-.dropdown-menu li {
-  padding: 10px;
-  cursor: pointer;
-  font-family: Poppins;
-}
-
-.dropdown-menu li:hover {
-  background-color: #f0f0f0;
 }

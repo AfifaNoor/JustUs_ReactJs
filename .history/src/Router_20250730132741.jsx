@@ -16,7 +16,7 @@ const router = createBrowserRouter(
       <Route path="/home/her-category" element={<HerCategoryPage />} />
       <Route path="/home/his-category" element={<HisCategoryPage />} />
       <Route path="/her-category/subcategory/:name" element={<SubCategory />} />
-      <Route path="/his-category/subcategory/:name" element={<HisSubcategory/>} />
+      <Route path="/his-category/hissubcategory/:name" element={<HisSubcategory/>} />
     </>
   )
 );

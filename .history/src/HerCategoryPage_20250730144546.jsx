@@ -32,10 +32,9 @@ console.log(categories,'categories')
   return (
     <div className='category-container'>
     <div className='category-list'>
-    <div className='back-btn' onClick={() => navigate(-1)}>
-    ←
-</div>
-
+    <div className='back-btn' onClick={() => navigate('-1')}>
+        ←
+    </div>
       {categories.map((value)=>(
         <button key={value.id} 
         className='category-btn' 

@@ -144,9 +144,7 @@ h1, h2, h3 {
   border-radius: 4px;
   cursor: pointer;
   font-family: poppins;
-  font-weight: 500;
-  font-size: 15px;
-  
+  font-weight: 50%;
 }
 .dropdown-menu {
   position: absolute;
@@ -165,7 +163,6 @@ h1, h2, h3 {
 .dropdown-menu li {
   padding: 10px;
   cursor: pointer;
-  font-family: Poppins;
 }
 
 .dropdown-menu li:hover {
