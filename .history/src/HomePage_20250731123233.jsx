@@ -9,7 +9,7 @@ const HomePage = () => {
 const navigate=useNavigate();
 
 const handledropdown =() =>{
-  navigate('/add-product')
+  navigate('/add-product-her')
 
 }
   
@@ -20,10 +20,10 @@ const handledropdown =() =>{
       <button className="dropdown-btn" onClick={handledropdown}> 
         Add Product
         </button>
-        {/* <ul className="dropdown-menu">
+        <ul className="dropdown-menu">
           <li>His Product</li>
           <li>Her product</li>
-        </ul> */}
+        </ul>
       </div>
         <div className="logo">JustUs</div>
         <div className="header-right">

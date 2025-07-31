@@ -9,7 +9,6 @@ import SubCategory from './SubCategory';
 import HisSubcategory from './HisSubcategory';
 import AddProduct from './AddProduct';
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -19,8 +18,7 @@ const router = createBrowserRouter(
       <Route path="/home/his-category" element={<HisCategoryPage />} />
       <Route path="/her-category/subcategory/:name" element={<SubCategory />} />
       <Route path="/his-category/subcategory/:name" element={<HisSubcategory/>} />
-      <Route path='/add-product' element={<AddProduct/>}/>
-
+      <Route path="/add-product" element={<AddProduct/>}/>
     </>
   )
 );

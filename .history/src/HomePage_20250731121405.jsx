@@ -5,13 +5,16 @@ import avatarImage from "./Assets/avatar.png";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-// const [dropdownOpen, setDropdownOpen] = useState(false);
+const [dropdownOpen, setDropdownOpen] = useState(false);
 const navigate=useNavigate();
 
 const handledropdown =() =>{
+  setDropdownOpen(!dropdownOpen)
   navigate('/add-product')
 
 }
+  
+  
   
   return (
     <div className="home-page">
@@ -20,10 +23,10 @@ const handledropdown =() =>{
       <button className="dropdown-btn" onClick={handledropdown}> 
         Add Product
         </button>
-        {/* <ul className="dropdown-menu">
+        <ul className="dropdown-menu">
           <li>His Product</li>
           <li>Her product</li>
-        </ul> */}
+        </ul>
       </div>
         <div className="logo">JustUs</div>
         <div className="header-right">
