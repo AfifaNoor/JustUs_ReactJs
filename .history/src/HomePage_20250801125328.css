@@ -137,7 +137,7 @@ h1, h2, h3 {
   display: inline-block;
   margin-left: 0; 
 }
-.product-btn{
+.dropdown-btn {
   padding: 8px 12px;
   background: linear-gradient(180deg, #D9236E 0%, #A4004E 100%);
   color: white;

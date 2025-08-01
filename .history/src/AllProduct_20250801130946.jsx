@@ -14,8 +14,7 @@ const AllProduct = () => {
           <th>SubCategory</th>
           <th>Product Name</th>
            <th>Image</th>
-            <th>Price</th>
-            <th>Priority</th> 
+            <th>Priority</th>
         </tr>
       </thead>
     </table>

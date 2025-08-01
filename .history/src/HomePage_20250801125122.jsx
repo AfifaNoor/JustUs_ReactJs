@@ -10,9 +10,8 @@ const navigate=useNavigate();
 
 const handledropdown =() =>{
   navigate('/add-product')
-
 }
-const handleAllproduct = ()=>{
+const handleAllproduct= ()=>{
   navigate('/all-product')
 }
   
@@ -20,10 +19,10 @@ const handleAllproduct = ()=>{
     <div className="home-page">
       <header className="header">
       <div className="dropdown-container">
-      <button className="product-btn" onClick={handledropdown}> 
+      <button className="btn" onClick={handledropdown}> 
         Add Product
         </button>
-        <button className="product-btn"  onClick={handleAllproduct}>  All Product</button>
+      <button className="btn"> All Product</button>
         {/* <ul className="dropdown-menu">
           <li>His Product</li>
           <li>Her product</li>

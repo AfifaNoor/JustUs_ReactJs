@@ -12,18 +12,14 @@ const handledropdown =() =>{
   navigate('/add-product')
 
 }
-const handleAllproduct = ()=>{
-  navigate('/all-product')
-}
   
   return (
     <div className="home-page">
       <header className="header">
       <div className="dropdown-container">
-      <button className="product-btn" onClick={handledropdown}> 
+      <button className="dropdown-btn" onClick={handledropdown}> 
         Add Product
         </button>
-        <button className="product-btn"  onClick={handleAllproduct}>  All Product</button>
         {/* <ul className="dropdown-menu">
           <li>His Product</li>
           <li>Her product</li>

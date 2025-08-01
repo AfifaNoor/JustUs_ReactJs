@@ -5,17 +5,14 @@ const AllProduct = () => {
 
   return (
     <div className='table-container'>
-    <h2 className='table-header'>All Products</h2>
+    <td className='table-header'>All Products</td>
     <table className='product-table'>
       <thead>
         <tr>
-          <th>Gender</th>
-          <th>Category</th>
-          <th>SubCategory</th>
           <th>Product Name</th>
-           <th>Image</th>
-            <th>Price</th>
-            <th>Priority</th> 
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
         </tr>
       </thead>
     </table>
