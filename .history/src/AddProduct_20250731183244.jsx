@@ -98,7 +98,7 @@ const handleSubmit = async (e) => {
             value={imageUrl}
             onChange={(e) =>setImageUrl(e.target.value)}
             placeholder='Image URL'
-            
+            required
           />
         </div>
 

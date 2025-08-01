@@ -1,0 +1,26 @@
+.add-product-page {
+  max-width: 700px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--ceriseway-dark-red);
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ceriseway-red);
+}
+.form-input,
+.form-label{
+    padding: 10px 14px;
+    border: 2px solid var(--ceriseway-light-pink);
+    border-radius: 10px;
+    
+}

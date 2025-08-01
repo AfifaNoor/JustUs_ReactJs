@@ -14,17 +14,19 @@ const [priority, setPriority] = useState('')
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
-  try{
-    const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/products",{
+  const formData = {
     mainSection : gender,
     category,
     subcategory,
     name: productName,
     imageUrls : [imageUrl],
     price,
-    priority:priority.toLowerCase()
-    });
+    priority
+  };
+  console.log(formData);
+
+  try{
+    const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/products");
     console.log(response.data , 'response')
   }catch (error) {
     console.log("error", error)
@@ -69,7 +71,7 @@ const handleSubmit = async (e) => {
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
           <select className='form-select'
-          value={subcategory}
+          value={setCategory}
           onChange={(e)=>setSubcategory(e.target.value)} 
           required>
             <option value="">Select</option>
@@ -98,7 +100,7 @@ const handleSubmit = async (e) => {
             value={imageUrl}
             onChange={(e) =>setImageUrl(e.target.value)}
             placeholder='Image URL'
-            
+            required
           />
         </div>
 

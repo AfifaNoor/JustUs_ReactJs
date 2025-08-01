@@ -1,0 +1,67 @@
+/* .add-product-page {
+  margin: 50px auto;
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--ceriseway-dark-red);
+} */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  /* background-color: #A4004E; */
+}
+.form-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ceriseway-red);
+}
+.form-select option {
+  background-color: white;
+  color: var(--ceriseway-red);
+  font-weight: 500;
+}
+.form-input,
+.form-input{
+    padding: 10px 14px;
+    border: 2px solid var(--ceriseway-light-pink);
+    border-radius: 10px;
+    font-size: 20px;
+    color: var(--ceriseway-red);
+    outline: none;
+    transition: border 0.3s ease;
+    
+}
+
+form-input:focus,
+.form-select:focus {
+  border-color: #A4004E;
+  outline: none;
+  background-color: #fff0f5;
+  box-shadow: 0 0 5px rgba(164, 0, 78, 0.3);
+}
+
+.form-input::placeholder {
+  color: #888;
+}
+
+.submit-button {
+  /* background-color: var(--ceriseway-dark-red); */
+  background: linear-gradient(to right, #D9236E, #A4004E);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-button:hover {
+  /* background-color: var(--ceriseway-red); */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(164, 0, 78, 0.3);
+  
+}

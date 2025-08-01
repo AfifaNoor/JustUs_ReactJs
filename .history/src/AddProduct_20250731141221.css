@@ -1,0 +1,102 @@
+/* .add-product-page {
+  margin: 50px auto;
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--ceriseway-dark-red);
+} */
+
+:root {
+  --ceriseway-light-gray: #f4f4f4;
+  --ceriseway-dark-red: #bd3125;
+  --ceriseway-deep-red: #8d0701;
+  --ceriseway-light-pink: #f5904a;
+  --ceriseway-red: #3f0405;
+}
+
+/* ------------------------------
+   🎨 Form Container Styling
+------------------------------ */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: var(--ceriseway-light-gray);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------------
+   🏷️ Label Styling
+------------------------------ */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ceriseway-red);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   📥 Input & Select Styling
+------------------------------ */
+.form-input,
+.form-select {
+  padding: 12px 16px;
+  border: 2px solid var(--ceriseway-light-pink);
+  border-radius: 12px;
+  font-size: 1.05rem;
+  color: var(--ceriseway-deep-red);
+  background-color: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+  opacity: 0.9;
+}
+
+/* Focus States */
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--ceriseway-dark-red);
+  outline: none;
+  background-color: #fff5f2;
+  box-shadow: 0 0 6px rgba(189, 49, 37, 0.25);
+}
+
+/* ------------------------------
+   🔽 Dropdown Option Styling
+------------------------------ */
+.form-select option {
+  background-color: white;
+  color: var(--ceriseway-red);
+  font-weight: 500;
+}
+
+/* ------------------------------
+   ✅ Submit Button Styling
+------------------------------ */
+.submit-button {
+  background: linear-gradient(to right, var(--ceriseway-dark-red), var(--ceriseway-deep-red));
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s ease;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 12px rgba(141, 7, 1, 0.2);
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(141, 7, 1, 0.3);
+  background: linear-gradient(to right, #a42c1d, #6e0401);
+}

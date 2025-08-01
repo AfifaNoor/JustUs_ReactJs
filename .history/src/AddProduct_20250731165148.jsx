@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './AddProduct.css';
-import axios from 'axios';
 
 const AddProduct = () => {
 
@@ -11,41 +10,30 @@ const [productName, setProductName] = useState('')
 const [imageUrl, setImageUrl] = useState('')
 const [price, setPrice] = useState('')
 const [priority, setPriority] = useState('')
-
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
-
-  try{
-    const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/products",{
-    mainSection : gender,
+  const formData = {
+    gender,
     category,
     subcategory,
-    name: productName,
-    imageUrls : [imageUrl],
+    productName,
+    imageUrl,
     price,
-    priority:priority.toLowerCase()
-    });
-    console.log(response.data , 'response')
-  }catch (error) {
-    console.log("error", error)
-  }
+    priority
+  };
+  console.log(formData);
   
-
 };
 
   return (
     <div className='add-product-page'>
       <h2 className='page-title'>Add Product Page</h2>
 
-      <form className='form-container' onSubmit={handleSubmit}>
+      <form className='form-container'>
 
         <div className='form-group'>
           <label className='form-label'>Select Gender</label>
-          <select className='form-select'
-           value={gender} 
-           onChange={(e) => setGender(e.target.value)}
-           required
-           >
+          <select className='form-select' required>
             <option value="">Select</option>
             <option value="his">His</option>
             <option value="her">Her</option>
@@ -54,12 +42,7 @@ const handleSubmit = async (e) => {
        
         <div className='form-group'>
           <label className='form-label'>Category</label>
-          <select 
-          className='form-select' 
-          value={category}
-          onChange={(e)=>setCategory(e.target.value)} 
-          required>
-
+          <select className='form-select' required>
             <option value="">Select</option>
             <option value="dress">Dress</option>
             <option value="tshirt">T Shirt</option>
@@ -68,10 +51,7 @@ const handleSubmit = async (e) => {
 
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
-          <select className='form-select'
-          value={subcategory}
-          onChange={(e)=>setSubcategory(e.target.value)} 
-          required>
+          <select className='form-select' required>
             <option value="">Select</option>
             <option value="summer">Summer Wear</option>
             <option value="winter">Winter Wear</option>
@@ -83,8 +63,6 @@ const handleSubmit = async (e) => {
           <input
             className='form-input'
             type='text'
-            value={productName}
-            onChange={(e)=>setProductName(e.target.value)}
             placeholder='Enter Product Name'
             required
           />
@@ -95,10 +73,8 @@ const handleSubmit = async (e) => {
           <input
             className='form-input'
             type='text'
-            value={imageUrl}
-            onChange={(e) =>setImageUrl(e.target.value)}
             placeholder='Image URL'
-            
+            required
           />
         </div>
 
@@ -107,8 +83,6 @@ const handleSubmit = async (e) => {
           <input
             className='form-input'
             type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
             name="price"
             placeholder='Enter Price'
             required
@@ -120,8 +94,6 @@ const handleSubmit = async (e) => {
           <select
             className='form-select'
             name="priority"
-            value={priority}
-            onChange={(e)=>setPriority(e.target.value)}
             required
           >
             <option value="">Select Priority</option>

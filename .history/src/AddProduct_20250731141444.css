@@ -1,0 +1,90 @@
+/* .add-product-page {
+  margin: 50px auto;
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--ceriseway-dark-red);
+} */
+ 
+form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background-color: #FDEAEF; /* Light Pink Tint */
+  box-shadow: 0 10px 30px rgba(164, 0, 78, 0.1);
+}
+
+/* ------------------------------
+   🏷️ Label Styling
+------------------------------ */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #A4004E; /* Deep Raspberry Pink */
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+}
+
+/* ------------------------------
+   📥 Input & Dropdown
+------------------------------ */
+.form-input,
+.form-select {
+  padding: 12px 16px;
+  border: 2px solid #FFD3E0;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  color: #A4004E;
+  background-color: #FFEFF4; /* Soft Pink */
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-input::placeholder {
+  color: #999;
+  opacity: 0.9;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #A4004E;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(164, 0, 78, 0.2);
+  outline: none;
+}
+
+/* ------------------------------
+   🔽 Dropdown Options
+------------------------------ */
+.form-select option {
+  background-color: white;
+  color: #A4004E;
+  font-weight: 500;
+}
+
+/* ------------------------------
+   🚀 Submit Button
+------------------------------ */
+.submit-button {
+  background: linear-gradient(to right, #D9236E, #A4004E); /* Gradient Pink */
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s ease;
+  letter-spacing: 0.8px;
+  box-shadow: 0 6px 14px rgba(164, 0, 78, 0.25);
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(164, 0, 78, 0.3);
+  background: linear-gradient(to right, #bd125d, #8d0040);
+}

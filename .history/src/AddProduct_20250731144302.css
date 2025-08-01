@@ -1,0 +1,205 @@
+.form-container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-select, .form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-input {
+  font-size: 16px;
+}
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+    .back-btn:hover {
+      background-color: #FDEAEF;
+      box-shadow: 0 6px 16px rgba(44, 62, 80, 0.2);
+    }   
+    .submit-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-button:active {
+      background-color: #1e7e34;
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       top: 20px;
+    left: 20px;
+    background-color: #FDEAEF;
+    color: #2C3E50;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    .submit-button:hover {
+      background-color: #FDEAEF;
+      box-shadow: 0 6px 16px rgba(44, 62, 80, 0.2);
+    }
+   
+    
+    .submit-button:active {
+      background-color: #1e7e34;
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #D9236E;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    .back-btn:hover {
+      background-color: #E03A7A;
+      box-shadow: 0 6px 16px rgba(44, 62, 80, 0.2);
+    }
+    
+    
+    .back-btn:active {
+      background-color: #D9236E;
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .form-select:hover, .form-input:hover {
+    border-color: #888;
+    z-index: 1000;
+    }
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-select, .form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-select:hover, .form-input:hover {
+  border-color: #888;
+  z-index: 1000;
+}
+
+.form-select:focus, .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

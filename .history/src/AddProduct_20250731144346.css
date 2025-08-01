@@ -1,0 +1,102 @@
+/* ------------------------------
+🌸 Form Container
+------------------------------ */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* ------------------------------
+🏷️ Form Groups & Labels
+------------------------------ */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* ------------------------------
+📥 Inputs & Selects
+------------------------------ */
+.form-select,
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:hover,
+.form-input:hover {
+  border-color: #888;
+}
+
+.form-select:focus,
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ------------------------------
+✅ Submit Button
+------------------------------ */
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:active {
+  background-color: #1e7e34;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------
+🔙 Back Button
+------------------------------ */
+.back-btn {
+  background-color: #FDEAEF;
+  color: #2C3E50;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.back-btn:hover {
+  background-color: #E03A7A;
+  box-shadow: 0 6px 16px rgba(44, 62, 80, 0.2);
+}
+
+.back-btn:active {
+  background-color: #D9236E;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
