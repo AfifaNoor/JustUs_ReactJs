@@ -19,7 +19,7 @@ console.log(genderOptions,'genderoption')
 useEffect(()=>{
   fetchmainSection()
 
-}, [])
+})
 
 const fetchmainSection = async () => {
   try {

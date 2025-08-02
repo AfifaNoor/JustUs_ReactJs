@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const AllProduct = () => {
     const [allproduct, setAllProduct] = useState([]);
-    console.log(allproduct,'allproduct');
  
     useEffect(() => {
         const fetchProducts = async () => {
@@ -33,10 +32,11 @@ const AllProduct = () => {
         </tr>
       </thead>
       <tbody>
-        {allproduct.map((product,index)=>{
-            return (
+        {allproduct.map((product,index)=>(
+            
+        ) (
                 <tr key={index}>
-                    <td>{product.mainSection}</td>
+                    <td>{product.mainsection}</td>
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
@@ -46,7 +46,7 @@ const AllProduct = () => {
                     
                 </tr>
             );
-        })}
+        )}
        
       </tbody>
     </table>

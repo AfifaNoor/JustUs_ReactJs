@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useEffect, useState } from 'react';
 import './AllProduct.css';
 import axios from 'axios';
 
 const AllProduct = () => {
     const [allproduct, setAllProduct] = useState([]);
-    console.log(allproduct,'allproduct');
  
     useEffect(() => {
         const fetchProducts = async () => {
@@ -34,20 +33,17 @@ const AllProduct = () => {
       </thead>
       <tbody>
         {allproduct.map((product,index)=>{
-            return (
-                <tr key={index}>
-                    <td>{product.mainSection}</td>
-                    <td>{product.category}</td>
-                    <td>{product.subcategory}</td>
-                    <td>{product.name}</td>
-                    <td>{product.imageUrls}</td>
-                    <td>{product.price}</td>
-                    <td>{product.priority}</td>
-                    
-                </tr>
-            );
+            <tr key={index}>
+                <td>{product.mainsection}</td>
+                <td>{product.category}</td>
+                <td>{product.subcategory}</td>
+                <td>{product.mainsection}</td>
+                <td>{product.mainsection}</td>
+                <td>{product.mainsection}</td>
+                <td>{product.mainsection}</td>
+                
+            </tr>
         })}
-       
       </tbody>
     </table>
     </div>

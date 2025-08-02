@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
 
 const AddProduct = () => {
 
 const [gender, setGender] = useState('')
-const [genderOptions, setGenderOptions] = useState([]);
-const [selection , setSelection] = useState('')
-console.log('selection', selection)
 const [category, setCategory] = useState('')
 const [subcategory, setSubcategory] = useState('')
 const [productName, setProductName] = useState('')
 const [imageUrl, setImageUrl] = useState('')
 const [price, setPrice] = useState('')
 const [priority, setPriority] = useState('')
-console.log(genderOptions,'genderoption')
 
 useEffect(()=>{
   fetchmainSection()
 
-}, [])
+})
 
 const fetchmainSection = async () => {
   try {
-    const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/product-metadata");
-      setGenderOptions(response.data.sections)
-      console.log("API response:", response.data.sections);
+    const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/products");
+      setGender(response.data)
 
   } catch (error) {
     console.log("error", error);
@@ -60,10 +55,6 @@ const handleSubmit = async (e) => {
 
 };
 
-const handleChange=(e)=>{
-  setSelection(e.target.value)
-}
-
 
 
 
@@ -76,20 +67,13 @@ const handleChange=(e)=>{
         <div className='form-group'>
           <label className='form-label'>Select Gender</label>
           <select className='form-select'
-           value={selection} 
-           onChange={handleChange}
+           value={gender} 
+           onChange={(e) => setGender(e.target.value)}
            required
            >
             <option value="">Select</option>
             {
-              genderOptions.map((item,index)=> (
-                <option 
-                key={index}
-                value={item}
-                >
-                  {item}
-                </option>
-              ))
+              gender.
             }
            
           </select>

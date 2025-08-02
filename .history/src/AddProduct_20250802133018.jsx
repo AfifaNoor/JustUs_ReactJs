@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
 
@@ -6,8 +6,6 @@ const AddProduct = () => {
 
 const [gender, setGender] = useState('')
 const [genderOptions, setGenderOptions] = useState([]);
-const [selection , setSelection] = useState('')
-console.log('selection', selection)
 const [category, setCategory] = useState('')
 const [subcategory, setSubcategory] = useState('')
 const [productName, setProductName] = useState('')
@@ -19,12 +17,12 @@ console.log(genderOptions,'genderoption')
 useEffect(()=>{
   fetchmainSection()
 
-}, [])
+})
 
 const fetchmainSection = async () => {
   try {
     const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/product-metadata");
-      setGenderOptions(response.data.sections)
+      setGenderOptions(response.data)
       console.log("API response:", response.data.sections);
 
   } catch (error) {
@@ -60,10 +58,6 @@ const handleSubmit = async (e) => {
 
 };
 
-const handleChange=(e)=>{
-  setSelection(e.target.value)
-}
-
 
 
 
@@ -76,8 +70,8 @@ const handleChange=(e)=>{
         <div className='form-group'>
           <label className='form-label'>Select Gender</label>
           <select className='form-select'
-           value={selection} 
-           onChange={handleChange}
+           value={gender} 
+           onChange={(e) => setGender(e.target.value)}
            required
            >
             <option value="">Select</option>
@@ -87,7 +81,7 @@ const handleChange=(e)=>{
                 key={index}
                 value={item}
                 >
-                  {item}
+                  {item.her}
                 </option>
               ))
             }

@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const AllProduct = () => {
     const [allproduct, setAllProduct] = useState([]);
-    console.log(allproduct,'allproduct');
  
     useEffect(() => {
         const fetchProducts = async () => {
@@ -36,7 +35,7 @@ const AllProduct = () => {
         {allproduct.map((product,index)=>{
             return (
                 <tr key={index}>
-                    <td>{product.mainSection}</td>
+                    <td>{product.gender}</td>
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>

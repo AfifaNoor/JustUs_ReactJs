@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useEffect, useState } from 'react';
 import './AllProduct.css';
 import axios from 'axios';
 
 const AllProduct = () => {
-    const [allproduct, setAllProduct] = useState([]);
-    console.log(allproduct,'allproduct');
+    const [products, setProducts] = useState([]);
  
     useEffect(() => {
         const fetchProducts = async () => {
             const response = await axios.get('https://mediatracker-dp6t.onrender.com/api/products');
-            setAllProduct(response.data);
+            setProducts(response.data);
             console.log(response.data, 'Fetched Products');
         };
 
@@ -21,9 +20,9 @@ const AllProduct = () => {
     <div className='table-container'>
     <h2 className='table-header'>All Products</h2>
     <table className='product-table'>
-    <thead>
-         <tr>
-          <th>Gender </th>   
+      <thead>
+        <tr>
+          <th>Gender</th>
           <th>Category</th>
           <th>SubCategory</th>
           <th>Product Name</th>
@@ -32,23 +31,6 @@ const AllProduct = () => {
             <th>Priority</th> 
         </tr>
       </thead>
-      <tbody>
-        {allproduct.map((product,index)=>{
-            return (
-                <tr key={index}>
-                    <td>{product.mainSection}</td>
-                    <td>{product.category}</td>
-                    <td>{product.subcategory}</td>
-                    <td>{product.name}</td>
-                    <td>{product.imageUrls}</td>
-                    <td>{product.price}</td>
-                    <td>{product.priority}</td>
-                    
-                </tr>
-            );
-        })}
-       
-      </tbody>
     </table>
     </div>
   )

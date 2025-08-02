@@ -36,7 +36,7 @@ const AllProduct = () => {
         {allproduct.map((product,index)=>{
             return (
                 <tr key={index}>
-                    <td>{product.mainSection}</td>
+                    <td>{product.mainsection}</td>
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>

@@ -7,7 +7,7 @@ const AddProduct = () => {
 const [gender, setGender] = useState('')
 const [genderOptions, setGenderOptions] = useState([]);
 const [selection , setSelection] = useState('')
-console.log('selection', selection)
+console.log('selction', selection)
 const [category, setCategory] = useState('')
 const [subcategory, setSubcategory] = useState('')
 const [productName, setProductName] = useState('')
@@ -19,7 +19,7 @@ console.log(genderOptions,'genderoption')
 useEffect(()=>{
   fetchmainSection()
 
-}, [])
+})
 
 const fetchmainSection = async () => {
   try {
