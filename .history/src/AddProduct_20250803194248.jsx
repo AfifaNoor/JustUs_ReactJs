@@ -167,7 +167,7 @@ const herSubcategoryHandle =(e) =>{
             key={index}
             value={item}
             >
-            {item.subcategories}
+            {item.sub}
 
             </option>
            ))

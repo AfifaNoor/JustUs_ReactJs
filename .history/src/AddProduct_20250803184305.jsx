@@ -14,9 +14,6 @@ console.log(hercategoryOption ,'hercategoryOption ')
 const [herCategoryselection , setHercategorySelection] = useState('')
 console.log(herCategoryselection," herCategoryselection")
 const [subcategory, setSubcategory] = useState('')
-const[herSubcategory, setherSubcategory] = useState([])
-console.log(herSubcategory,"hersub")
-const[herSubcategorySelection, setherSubcategorySelection] = useState('')
 const [productName, setProductName] = useState('')
 const [imageUrl, setImageUrl] = useState('')
 const [price, setPrice] = useState('')
@@ -26,20 +23,8 @@ console.log(genderOptions,'genderoption')
 useEffect(()=>{
   fetchmainSection()
   fetchHercategory()
-  fetchHerSubcategory()
 
 }, [])
-
-const fetchHerSubcategory = async () =>{
-  try{
-    const SubCategoryresponse = await axios.get(" https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her&category=Cool%20Dress")
-    setherSubcategory(SubCategoryresponse.data)
-      console.log( setherSubcategory ,'setherSubcategory')
-    
-  }catch(error){
-    console.log(error,'error')
-  }
-}
 
 
 const fetchHercategory = async () =>{
@@ -100,9 +85,6 @@ const herCategoryHandle =(e)=>{
   setHercategorySelection(e.target.value)
 }
 
-const herSubcategoryHandle =(e) =>{
-  setherSubcategorySelection(e.target.value)
-}
 
 
 
@@ -145,7 +127,7 @@ const herSubcategoryHandle =(e) =>{
             { hercategoryOption.map((item,index)=> (
               <option
               key={index}
-              value={item.categories}>
+              value={item}>
               {item.name  }
               </option>
             ))
@@ -158,21 +140,12 @@ const herSubcategoryHandle =(e) =>{
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
           <select className='form-select'
-          value={herSubcategorySelection}
-          onChange={herSubcategoryHandle} 
+          value={subcategory}
+          onChange={(e)=>setSubcategory(e.target.value)} 
           required>
             <option value="">Select</option>
-           { herSubcategory.map((index,item)=>(
-            <option
-            key={index}
-            value={item}
-            >
-            {item.subcategories}
-
-            </option>
-           ))
-
-           }
+            <option value="summer">Summer Wear</option>
+            <option value="winter">Winter Wear</option>
           </select>
         </div>
 

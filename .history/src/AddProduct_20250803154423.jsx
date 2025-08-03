@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
 
@@ -10,13 +10,8 @@ const [selection , setSelection] = useState('')
 console.log('selection', selection)
 const [category, setCategory] = useState('')
 const[hercategoryOption , setHercategoryOption] = useState([])
-console.log(hercategoryOption ,'hercategoryOption ')
-const [herCategoryselection , setHercategorySelection] = useState('')
-console.log(herCategoryselection," herCategoryselection")
+consi
 const [subcategory, setSubcategory] = useState('')
-const[herSubcategory, setherSubcategory] = useState([])
-console.log(herSubcategory,"hersub")
-const[herSubcategorySelection, setherSubcategorySelection] = useState('')
 const [productName, setProductName] = useState('')
 const [imageUrl, setImageUrl] = useState('')
 const [price, setPrice] = useState('')
@@ -26,20 +21,8 @@ console.log(genderOptions,'genderoption')
 useEffect(()=>{
   fetchmainSection()
   fetchHercategory()
-  fetchHerSubcategory()
 
 }, [])
-
-const fetchHerSubcategory = async () =>{
-  try{
-    const SubCategoryresponse = await axios.get(" https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her&category=Cool%20Dress")
-    setherSubcategory(SubCategoryresponse.data)
-      console.log( setherSubcategory ,'setherSubcategory')
-    
-  }catch(error){
-    console.log(error,'error')
-  }
-}
 
 
 const fetchHercategory = async () =>{
@@ -96,13 +79,6 @@ const handleChange=(e)=>{
   setSelection(e.target.value)
 }
 
-const herCategoryHandle =(e)=>{
-  setHercategorySelection(e.target.value)
-}
-
-const herSubcategoryHandle =(e) =>{
-  setherSubcategorySelection(e.target.value)
-}
 
 
 
@@ -138,19 +114,12 @@ const herSubcategoryHandle =(e) =>{
           <label className='form-label'>Category</label>
           <select 
           className='form-select' 
-          value={herCategoryselection}
-          onChange={herCategoryHandle} 
+          value={category}
+          onChange={(e)=>setCategory(e.target.value)} 
           required>
             <option value="">Select</option>
-            { hercategoryOption.map((item,index)=> (
-              <option
-              key={index}
-              value={item.categories}>
-              {item.name  }
-              </option>
-            ))
-
-            }
+            {/* <option value="dress">Dress</option>
+            <option value="tshirt">T Shirt</option> */}
             
           </select>
         </div>
@@ -158,21 +127,12 @@ const herSubcategoryHandle =(e) =>{
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
           <select className='form-select'
-          value={herSubcategorySelection}
-          onChange={herSubcategoryHandle} 
+          value={subcategory}
+          onChange={(e)=>setSubcategory(e.target.value)} 
           required>
             <option value="">Select</option>
-           { herSubcategory.map((index,item)=>(
-            <option
-            key={index}
-            value={item}
-            >
-            {item.subcategories}
-
-            </option>
-           ))
-
-           }
+            <option value="summer">Summer Wear</option>
+            <option value="winter">Winter Wear</option>
           </select>
         </div>
 
