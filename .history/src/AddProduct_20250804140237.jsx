@@ -31,13 +31,13 @@ const priorityOptions = ["High", "Medium", "Low"];
 
 useEffect(()=>{
   fetchmainSection()
-  
+  fetchHerSubcategory()
 
 }, [])
 
-const fetchHerSubcategory = async (gender,subcategory) =>{
+const fetchHerSubcategory = async () =>{
   try{
-    const SubCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${subcategory}`)
+    const SubCategoryresponse = await axios.get(" https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her&category=Cool%20Dress")
     setherSubcategory(SubCategoryresponse.data.subcategories)
       console.log( SubCategoryresponse.data.subcategories,'setherSubcategory')
     
@@ -47,7 +47,18 @@ const fetchHerSubcategory = async (gender,subcategory) =>{
 }
 
 
+// const fetchHercategory = async () =>{
+
+//   try{
+//     const Categoryresponse = await axios.get('https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her')
+//     setHercategoryOption(Categoryresponse.data.categories)
+//     console.log(Categoryresponse.data.categories,"sethercategory")
+//   }catch(error){
+//     console.log("error", error);
+//   }
+// }
 const fetchHiscategory = async (choice) =>{
+//  const choice='his';
   try{
     const HerCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`)
     setHercategoryOption(HerCategoryresponse.data)
@@ -109,7 +120,6 @@ const herCategoryHandle =(e)=>{
 
 const herSubcategoryHandle =(e) =>{
   setherSubcategorySelection(e.target.value)
-  fetchHerSubcategory(e.target.value)
 }
 
 

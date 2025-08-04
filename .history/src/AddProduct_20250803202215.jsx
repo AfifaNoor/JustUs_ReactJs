@@ -18,26 +18,22 @@ const[herSubcategory, setherSubcategory] = useState([])
 console.log(herSubcategory,"hersub")
 const[herSubcategorySelection, setherSubcategorySelection] = useState('')
 console.log(herSubcategorySelection,'herSubcategorySelection')
-const[hiscategoryOption , setHiscategoryOption] = useState([])
 const [productName, setProductName] = useState('')
 const [imageUrl, setImageUrl] = useState('')
 const [price, setPrice] = useState('')
 const [priority, setPriority] = useState('')
 console.log(genderOptions,'genderoption')
 
-
-
-const priorityOptions = ["High", "Medium", "Low"];
-
 useEffect(()=>{
   fetchmainSection()
-  
+  fetchHercategory()
+  fetchHerSubcategory()
 
 }, [])
 
-const fetchHerSubcategory = async (gender,subcategory) =>{
+const fetchHerSubcategory = async () =>{
   try{
-    const SubCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${subcategory}`)
+    const SubCategoryresponse = await axios.get(" https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her&category=Cool%20Dress")
     setherSubcategory(SubCategoryresponse.data.subcategories)
       console.log( SubCategoryresponse.data.subcategories,'setherSubcategory')
     
@@ -47,11 +43,12 @@ const fetchHerSubcategory = async (gender,subcategory) =>{
 }
 
 
-const fetchHiscategory = async (choice) =>{
+const fetchHercategory = async () =>{
+
   try{
-    const HerCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`)
-    setHercategoryOption(HerCategoryresponse.data)
-    console.log(HerCategoryresponse.data,"sethiscategory")
+    const Categoryresponse = await axios.get('https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her')
+    setHercategoryOption(Categoryresponse.data.categories)
+    console.log(Categoryresponse.data.categories,"sethercategory")
   }catch(error){
     console.log("error", error);
   }
@@ -62,11 +59,9 @@ const fetchmainSection = async () => {
     const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/product-metadata");
       setGenderOptions(response.data.sections)
       console.log("API response:", response.data.sections);
-      
 
   } catch (error) {
     console.log("error", error);
-    
   }
 };
 
@@ -100,7 +95,6 @@ const handleSubmit = async (e) => {
 
 const handleChange=(e)=>{
   setSelection(e.target.value)
-  fetchHiscategory(e.target.value)
 }
 
 const herCategoryHandle =(e)=>{
@@ -109,7 +103,6 @@ const herCategoryHandle =(e)=>{
 
 const herSubcategoryHandle =(e) =>{
   setherSubcategorySelection(e.target.value)
-  fetchHerSubcategory(e.target.value)
 }
 
 
@@ -170,11 +163,11 @@ const herSubcategoryHandle =(e) =>{
           onChange={herSubcategoryHandle} 
           required>
             <option value="">Select</option>
-           { herSubcategory.map((item,index)=>(
+           { herSubcategory.map((index,item)=>(
             <option
             key={index}
-            value={item}>
-
+            value={item.subcategories}
+            >
             {item}
 
             </option>
@@ -231,13 +224,9 @@ const herSubcategoryHandle =(e) =>{
             required
           >
             <option value="">Select Priority</option>
-            {priorityOptions.map((item,index)=>(
-              <option
-              key={index}
-              value={item}>
-                {item}
-              </option>
-            ))}
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
           </select>
         </div>
 

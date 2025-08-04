@@ -109,7 +109,7 @@ const herCategoryHandle =(e)=>{
 
 const herSubcategoryHandle =(e) =>{
   setherSubcategorySelection(e.target.value)
-  fetchHerSubcategory(e.target.value)
+  fetchHerSubcategory()
 }
 
 

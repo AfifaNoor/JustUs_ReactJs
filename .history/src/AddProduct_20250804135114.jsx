@@ -31,13 +31,15 @@ const priorityOptions = ["High", "Medium", "Low"];
 
 useEffect(()=>{
   fetchmainSection()
-  
+  fetchHercategory()
+  fetchHerSubcategory()
+  fetchHiscategory()
 
 }, [])
 
-const fetchHerSubcategory = async (gender,subcategory) =>{
+const fetchHerSubcategory = async () =>{
   try{
-    const SubCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${subcategory}`)
+    const SubCategoryresponse = await axios.get(" https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her&category=Cool%20Dress")
     setherSubcategory(SubCategoryresponse.data.subcategories)
       console.log( SubCategoryresponse.data.subcategories,'setherSubcategory')
     
@@ -47,11 +49,22 @@ const fetchHerSubcategory = async (gender,subcategory) =>{
 }
 
 
-const fetchHiscategory = async (choice) =>{
+const fetchHercategory = async () =>{
+
   try{
-    const HerCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`)
-    setHercategoryOption(HerCategoryresponse.data)
-    console.log(HerCategoryresponse.data,"sethiscategory")
+    const Categoryresponse = await axios.get('https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=her')
+    setHercategoryOption(Categoryresponse.data.categories)
+    console.log(Categoryresponse.data.categories,"sethercategory")
+  }catch(error){
+    console.log("error", error);
+  }
+}
+const fetchHiscategory = async () =>{
+ const choice='his';
+  try{
+    const HisCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`)
+    setHiscategoryOption(HisCategoryresponse.data)
+    console.log(HisCategoryresponse.data,"sethiscategory")
   }catch(error){
     console.log("error", error);
   }
@@ -62,11 +75,9 @@ const fetchmainSection = async () => {
     const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/product-metadata");
       setGenderOptions(response.data.sections)
       console.log("API response:", response.data.sections);
-      
 
   } catch (error) {
     console.log("error", error);
-    
   }
 };
 
@@ -100,7 +111,6 @@ const handleSubmit = async (e) => {
 
 const handleChange=(e)=>{
   setSelection(e.target.value)
-  fetchHiscategory(e.target.value)
 }
 
 const herCategoryHandle =(e)=>{
@@ -109,7 +119,6 @@ const herCategoryHandle =(e)=>{
 
 const herSubcategoryHandle =(e) =>{
   setherSubcategorySelection(e.target.value)
-  fetchHerSubcategory(e.target.value)
 }
 
 
