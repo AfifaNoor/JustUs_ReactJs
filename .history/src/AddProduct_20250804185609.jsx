@@ -8,7 +8,7 @@ const AddProduct = () => {
   const [genderOptions, setGenderOptions] = useState([]);
   const [categoryOptions, setCategoryOptions] = useState([]);
   const [category, setCategory] = useState('');
-  console.log(category,'category11')
+  console.log(category,'category')
   const [subcategoryOptions, setSubcategoryOptions] = useState([]);
   console.log(subcategoryOptions,'subcategoryOptions')
   const [subcategory, setSubcategory] = useState('');
@@ -58,7 +58,8 @@ useEffect(() => {
   const handleGenderChange =(e)=>{
   setGender(e.target.value);
   fetchCategories(e.target.value);
- 
+  setCategory('');
+  setSubcategory('');
 
 }
 
@@ -66,9 +67,7 @@ useEffect(() => {
     setCategory(e.target.value);
     setSubcategory('');
     fetchSubcategories();
-    
-    
-    console.log(e.target.value ,category,'category22')
+    console.log(category,'category')
    
   };
 

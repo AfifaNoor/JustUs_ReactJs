@@ -67,8 +67,7 @@ useEffect(() => {
     setSubcategory('');
     fetchSubcategories();
     
-    
-    console.log(e.target.value ,category,'category22')
+    console.log(category,'category2222222222222')
    
   };
 

@@ -8,7 +8,7 @@ const AddProduct = () => {
   const [genderOptions, setGenderOptions] = useState([]);
   const [categoryOptions, setCategoryOptions] = useState([]);
   const [category, setCategory] = useState('');
-  console.log(category,'category11')
+  console.log(category,'category')
   const [subcategoryOptions, setSubcategoryOptions] = useState([]);
   console.log(subcategoryOptions,'subcategoryOptions')
   const [subcategory, setSubcategory] = useState('');
@@ -43,7 +43,7 @@ useEffect(() => {
     }
   };
 
-  const fetchSubcategories = async () => {
+  const fetchSubcategories = async (gender, category) => {
     try {
       const response = await axios.get(
         `https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${category}`
@@ -58,17 +58,16 @@ useEffect(() => {
   const handleGenderChange =(e)=>{
   setGender(e.target.value);
   fetchCategories(e.target.value);
- 
+  setCategory('');
+  setSubcategory('');
 
 }
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     setSubcategory('');
-    fetchSubcategories();
     
-    
-    console.log(e.target.value ,category,'category22')
+    console.log(category,'category')
    
   };
 
