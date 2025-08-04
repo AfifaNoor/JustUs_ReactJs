@@ -13,7 +13,7 @@ const AllProduct = () => {
              const response = await axios.get('https://mediatracker-dp6t.onrender.com/api/products');
             setAllProduct(response.data);
             console.log(response.data, 'Fetched Products');
-          }catch(error )  {
+          }catch(error ){
             console.log(error,'Invalid')
           }
            

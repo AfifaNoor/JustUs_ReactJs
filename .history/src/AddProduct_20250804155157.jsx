@@ -4,73 +4,71 @@ import axios from 'axios';
 
 const AddProduct = () => {
 
-  const [gender, setGender] = useState('');
-  const [genderOptions, setGenderOptions] = useState([]);
-  const [categoryOptions, setCategoryOptions] = useState([]);
-  const [category, setCategory] = useState('');
-  const [subcategoryOptions, setSubcategoryOptions] = useState([]);
-  const [subcategory, setSubcategory] = useState('');
-  const [productName, setProductName] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [price, setPrice] = useState('');
-  const [priority, setPriority] = useState('');
+const [gender, setGender] = useState('')
+const [genderOptions, setGenderOptions] = useState([]);
+const [selection , setSelection] = useState('')
+console.log('selection', selection)
+const [category, setCategory] = useState('')
+const[hercategoryOption , setHercategoryOption] = useState([])
+console.log(hercategoryOption ,'hercategoryOption ')
+const [herCategoryselection , setHercategorySelection] = useState('')
+console.log(herCategoryselection," herCategoryselection")
+const [subcategory, setSubcategory] = useState('')
+const[herSubcategory, setherSubcategory] = useState([])
+console.log(herSubcategory,"hersub")
+const[herSubcategorySelection, setherSubcategorySelection] = useState('')
+console.log(herSubcategorySelection,'herSubcategorySelection')
+const[hiscategoryOption , setHiscategoryOption] = useState([])
+const [productName, setProductName] = useState('')
+const [imageUrl, setImageUrl] = useState('')
+const [price, setPrice] = useState('')
+const [priority, setPriority] = useState('')
+console.log(genderOptions,'genderoption')
+
 
 
 const priorityOptions = ["High", "Medium", "Low"];
 
-useEffect(() => {
-    const fetchMainSections = async () => {
-      try {
-        const response = await axios.get('https://mediatracker-dp6t.onrender.com/api/product-metadata');
-        setGenderOptions(response.data.sections);
-        console.log(response.data.sections,'setGenderOptions')
-      } catch (error) {
-        console.error('Error fetching main sections:', error);
-      }
-    };
+useEffect(()=>{
+  fetchmainSection()
+  
 
-    fetchMainSections();
-  }, []);
+}, [])
 
- const fetchCategories = async (choice) => {
-    try {
-      const response = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`);
-      setCategoryOptions(response.data);
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
-  };
-
-  const fetchSubcategories = async (gender, category) => {
-    try {
-      const response = await axios.get(
-        `https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${category}`
-      );
-      setSubcategoryOptions(response.data.subcategories);
-    } catch (error) {
-      console.error('Error fetching subcategories:', error);
-    }
-  };
-  const handleGenderChange =(e)=>{
-  setGender(e.target.value);
-  fetchCategories(e.target.value);
-  setCategory('');
-  setSubcategory('');
-
+const fetchHerSubcategory = async (gender,subcategory) =>{
+  try{
+    const SubCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${subcategory}`)
+    setherSubcategory(SubCategoryresponse.data.subcategories)
+      console.log( SubCategoryresponse.data.subcategories,'setherSubcategory')
+    
+  }catch(error){
+    console.log(error,'error')
+  }
 }
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-    setSubcategory('');
-    fetchSubcategories(e.target.value);
-    console.log(category,'category')
-   
-  };
 
- const handleSubcategoryChange = (e) => {
-    setSubcategory(e.target.value);
-    console.log(e.target.value, 'subcategory');
-  };
+const fetchHiscategory = async (choice) =>{
+  try{
+    const HerCategoryresponse = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`)
+    setHercategoryOption(HerCategoryresponse.data)
+    console.log(HerCategoryresponse.data,"sethiscategory")
+  }catch(error){
+    console.log("error", error);
+  }
+}
+
+const fetchmainSection = async () => {
+  try {
+    const response = await axios.get("https://mediatracker-dp6t.onrender.com/api/product-metadata");
+      setGenderOptions(response.data.sections)
+      console.log("API response:", response.data.sections);
+      
+
+  } catch (error) {
+    console.log("error", error);
+    
+  }
+};
 
 
 const handleSubmit = async (e) => {
@@ -100,7 +98,20 @@ const handleSubmit = async (e) => {
 
 };
 
+const handleChange=(e)=>{
+  setSelection(e.target.value)
+  fetchHiscategory(e.target.value)
+  setherSubcategory('')
+}
 
+const herCategoryHandle =(e)=>{
+  setHercategorySelection(e.target.value)
+}
+
+const herSubcategoryHandle =(e) =>{
+  setherSubcategorySelection(e.target.value)
+  
+}
 
 
 
@@ -113,15 +124,17 @@ const handleSubmit = async (e) => {
         <div className='form-group'>
           <label className='form-label'>Select Gender</label>
           <select className='form-select'
-           value={gender} 
-           onChange={handleGenderChange}
+           value={selection} 
+           onChange={handleChange}
            required
            >
-            <option value="">Select Gender</option>
+            <option value="">Select</option>
             {
               genderOptions.map((item,index)=> (
                 <option 
-                key={index}  value={item}>
+                key={index}
+                value={item}
+                >
                   {item}
                 </option>
               ))
@@ -134,11 +147,11 @@ const handleSubmit = async (e) => {
           <label className='form-label'>Category</label>
           <select 
           className='form-select' 
-          value={category}
-          onChange={handleCategoryChange} 
+          value={herCategoryselection}
+          onChange={herCategoryHandle} 
           required>
             <option value="">Select</option>
-            { categoryOptions.map((item,index)=> (
+            { hercategoryOption.map((item,index)=> (
               <option
               key={index}
               value={item.categories}>
@@ -154,16 +167,16 @@ const handleSubmit = async (e) => {
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
           <select className='form-select'
-          value={subcategory}
-          onChange={handleSubcategoryChange} 
+          value={herSubcategorySelection}
+          onChange={herSubcategoryHandle} 
           required>
             <option value="">Select</option>
-           { subcategoryOptions.map((item,index)=>(
+           { herSubcategory.map((item,index)=>(
             <option
             key={index}
             value={item}>
 
-            {item}
+            {item.subcategories}
 
             </option>
            ))

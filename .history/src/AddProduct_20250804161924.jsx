@@ -62,8 +62,7 @@ useEffect(() => {
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     setSubcategory('');
-    fetchSubcategories(e.target.value);
-    console.log(category,'category')
+    fetchSubcategories(gender, e.target.value);
    
   };
 

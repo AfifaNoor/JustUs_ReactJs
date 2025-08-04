@@ -9,14 +9,9 @@ const AllProduct = () => {
  
     useEffect(() => {
         const fetchProducts = async () => {
-          try{
-             const response = await axios.get('https://mediatracker-dp6t.onrender.com/api/products');
+            const response = await axios.get('https://mediatracker-dp6t.onrender.com/api/products');
             setAllProduct(response.data);
             console.log(response.data, 'Fetched Products');
-          }catch(error )  {
-            console.log(error,'Invalid')
-          }
-           
         };
 
         fetchProducts();

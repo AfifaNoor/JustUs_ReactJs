@@ -51,26 +51,6 @@ useEffect(() => {
       console.error('Error fetching subcategories:', error);
     }
   };
-  const handleGenderChange =(e)=>{
-  setGender(e.target.value);
-  fetchCategories(e.target.value);
-  setCategory('');
-  setSubcategory('');
-
-}
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-    setSubcategory('');
-    fetchSubcategories(e.target.value);
-    console.log(category,'category')
-   
-  };
-
- const handleSubcategoryChange = (e) => {
-    setSubcategory(e.target.value);
-    console.log(e.target.value, 'subcategory');
-  };
 
 
 const handleSubmit = async (e) => {
@@ -100,7 +80,22 @@ const handleSubmit = async (e) => {
 
 };
 
+const handleGenderChange =(e)=>{
+  setGender(e.target.value);
+  fetchCategories(e.target.value);
+  setCategory('');
+  setSubcategory('');
+}
 
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    setSubcategory('');
+    fetchSubcategories(e.target.value);
+  };
+
+ const handleSubcategoryChange = (e) => {
+    setSubcategory(e.target.value);
+  };
 
 
 
@@ -163,7 +158,7 @@ const handleSubmit = async (e) => {
             key={index}
             value={item}>
 
-            {item}
+            {item.subcategories}
 
             </option>
            ))

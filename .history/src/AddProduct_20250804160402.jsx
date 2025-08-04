@@ -13,7 +13,7 @@ const AddProduct = () => {
   const [productName, setProductName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState('');
-  const [priority, setPriority] = useState('');
+  const [priority, setPriority] = useState('');\
 
 
 const priorityOptions = ["High", "Medium", "Low"];
@@ -32,44 +32,26 @@ useEffect(() => {
     fetchMainSections();
   }, []);
 
- const fetchCategories = async (choice) => {
+ const fetchCategories = async (selectedGender) => {
     try {
-      const response = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`);
-      setCategoryOptions(response.data);
+      const response = await axios.get(
+        `https://mediatracker-dp6t.onrender.com/api/categories/${selectedGender}`
+      );
+      setCategoryOptions(response.data || []);
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
   };
 
-  const fetchSubcategories = async (gender, category) => {
+  const fetchSubcategories = async (selectedGender, selectedCategory) => {
     try {
       const response = await axios.get(
-        `https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${gender}&category=${category}`
+        `https://mediatracker-dp6t.onrender.com/api/product-metadata?mainSection=${selectedGender}&category=${selectedCategory}`
       );
-      setSubcategoryOptions(response.data.subcategories);
+      setSubcategoryOptions(response.data.subcategories || []);
     } catch (error) {
       console.error('Error fetching subcategories:', error);
     }
-  };
-  const handleGenderChange =(e)=>{
-  setGender(e.target.value);
-  fetchCategories(e.target.value);
-  setCategory('');
-  setSubcategory('');
-
-}
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-    setSubcategory('');
-    fetchSubcategories(e.target.value);
-    console.log(category,'category')
-   
-  };
-
- const handleSubcategoryChange = (e) => {
-    setSubcategory(e.target.value);
-    console.log(e.target.value, 'subcategory');
   };
 
 
@@ -100,7 +82,23 @@ const handleSubmit = async (e) => {
 
 };
 
+const handleGenderChange =(e)=>{
+  setGender(e.target.value)
+  fetchCategories(e.target.value)
+  setCategory('');
+  setSubcategory
+}
 
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    setSubcategory('');
+    fetchSubcategories(e.target.value);
+  };
+
+const herSubcategoryHandle =(e) =>{
+  setherSubcategorySelection(e.target.value)
+  
+}
 
 
 
@@ -113,15 +111,17 @@ const handleSubmit = async (e) => {
         <div className='form-group'>
           <label className='form-label'>Select Gender</label>
           <select className='form-select'
-           value={gender} 
-           onChange={handleGenderChange}
+           value={selection} 
+           onChange={handleChange}
            required
            >
-            <option value="">Select Gender</option>
+            <option value="">Select</option>
             {
               genderOptions.map((item,index)=> (
                 <option 
-                key={index}  value={item}>
+                key={index}
+                value={item}
+                >
                   {item}
                 </option>
               ))
@@ -134,11 +134,11 @@ const handleSubmit = async (e) => {
           <label className='form-label'>Category</label>
           <select 
           className='form-select' 
-          value={category}
-          onChange={handleCategoryChange} 
+          value={herCategoryselection}
+          onChange={herCategoryHandle} 
           required>
             <option value="">Select</option>
-            { categoryOptions.map((item,index)=> (
+            { hercategoryOption.map((item,index)=> (
               <option
               key={index}
               value={item.categories}>
@@ -154,16 +154,16 @@ const handleSubmit = async (e) => {
         <div className='form-group'>
           <label className='form-label'>Subcategory</label>
           <select className='form-select'
-          value={subcategory}
-          onChange={handleSubcategoryChange} 
+          value={herSubcategorySelection}
+          onChange={herSubcategoryHandle} 
           required>
             <option value="">Select</option>
-           { subcategoryOptions.map((item,index)=>(
+           { herSubcategory.map((item,index)=>(
             <option
             key={index}
             value={item}>
 
-            {item}
+            {item.subcategories}
 
             </option>
            ))
