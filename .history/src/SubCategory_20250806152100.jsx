@@ -15,6 +15,8 @@ const SubCategory = () => {
           'https://mediatracker-dp6t.onrender.com/api/categories/her');
 
           console.log(response.data ,'data')
+        // const filterCategory =  response.data.find((category) => 
+        // category.name.toLowercase === name.toLocaleLowerCase);
         const filterCategory = response.data.find(
           (category) => category.name.toLowerCase() === name.toLowerCase()
         );
@@ -40,11 +42,12 @@ const SubCategory = () => {
    <div className='back-btn' onClick={() => navigate(-1)}>
     ←
 </div>
-    <h2>{name} </h2>
-    <ul className='subcategory-list'  onClick={handleProduct}>
+    <h2>{name}</h2>
+    <ul className='subcategory-list' >
         {subcategory.length > 0 ? (
           subcategory.map((item, index) => (
-            <li key={index}>{item}
+            <li key={index}>{item} 
+            onClick={handleProduct}  
             </li>
           ))
         ) : (

@@ -23,7 +23,7 @@ const router = createBrowserRouter(
       <Route path="/his-category/subcategory/:name" element={<HisSubcategory/>} />
       <Route path='/add-product' element={<AddProduct/>}/>
       <Route path='/all-product' element={<AllProduct/>}/>
-      <Route path='product-showcase' element={<ProductShowcase/>}/>
+      <Route path='product-showcase/:_id' element={<ProductShowcase/>}/>
 
     </>
   )

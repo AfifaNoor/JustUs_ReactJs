@@ -52,7 +52,7 @@ const AllProduct = () => {
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
                     <td>
-                    <a href={product.imageUrls} >
+                    <a href={product.imageUrls} target="_blank" rel="noopener noreferrer">
                     <img 
                       src={product.imageUrls}
                       alt={product.name}

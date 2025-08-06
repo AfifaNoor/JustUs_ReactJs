@@ -46,21 +46,18 @@ const AllProduct = () => {
       <tbody>
         {allproduct.map((product,index)=>{
             return (
-                <tr key={index}>
+                <tr key={index.id}>
                     <td>{product.mainSection}</td>
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
-                    <td>
-                    <a href={product.imageUrls} >
+                    <td >
                     <img 
-                      src={product.imageUrls}
-                      alt={product.name}
-                      style={{ width: '70px', objectFit: 'cover', cursor: 'pointer' }}
-                    />
-                    </a>
-                    </td>
-
+                    src={product.imageUrls}
+                    alt={product.name}  
+                    style={{width: '70px' , objectFit: 'cover'  }}
+                    
+                    /></td>
                     <td>{product.price}</td>
                     <td>{product.priority}</td>
                     

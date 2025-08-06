@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 const AddProduct = () => {
 
   const [gender, setGender] = useState('');
   const [genderOptions, setGenderOptions] = useState([]);
   const [categoryOptions, setCategoryOptions] = useState([]);
   const [category, setCategory] = useState('');
+  console.log(category,'category11')
   const [subcategoryOptions, setSubcategoryOptions] = useState([]);
+  console.log(subcategoryOptions,'subcategoryOptions')
   const [subcategory, setSubcategory] = useState('');
   const [productName, setProductName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -18,7 +20,6 @@ const AddProduct = () => {
 
 
 const priorityOptions = ["High", "Medium", "Low"];
-const navigate=useNavigate();
 
 useEffect(() => {
     const fetchMainSections = async () => {
@@ -38,7 +39,7 @@ useEffect(() => {
     try {
       const response = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`);
       setCategoryOptions(response.data);
-      console.log(response)
+      console.log(response.data ,'setCategoryOptions')
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
@@ -85,36 +86,40 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.post
-    ("https://mediatracker-dp6t.onrender.com/api/products", {
-      mainSection: gender,
-      category,
-      subcategory,
-      name: productName,
-      imageUrls: [imageUrl],
-      price:Number(price),
-      priority: priority.toLowerCase()
-    },
-     {
+    const response = await axios.post(
+      "https://mediatracker-dp6t.onrender.com/api/products",
+      {
+        mainSection: gender,
+        category: category,
+        subcategory,
+        name: productName,
+        imageUrls: [imageUrl],
+        price: price ? Number(price) : undefined,
+        priority: priority ? priority.toLowerCase() : undefined
+      },
+      {
         headers: {
           "Content-Type": "application/json"
         }
       }
-  );
-       
+    );
+
+    console.log(response.data, 'response');
+
+    // Clear form only after successful submission
+    setGender('');
+    setCategory('');
+    setSubcategory('');
+    setProductName('');
+    setImageUrl('');
+    setPrice('');
+    setPriority('');
+
   } catch (error) {
-    console.log("error invalid", error);
-
+    console.log("error", error?.response?.data || error.message);
   }
-  setGender('');
-  setCategory('');
-  setSubcategory('');
-  setProductName('');
-  setImageUrl('');
-  setPrice('');
-  setPriority('');
-
 };
+
 
 
 
@@ -123,9 +128,6 @@ const handleSubmit = async (e) => {
   return (
     <div className='add-product-page'>
       <h2 className='page-title'>Add Product Page</h2>
-      <div className='back-btn' onClick={() => navigate(-1)}>
-         ←
-      </div>
 
       <form className='form-container' onSubmit={handleSubmit}>
 

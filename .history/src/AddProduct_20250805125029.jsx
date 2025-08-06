@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 const AddProduct = () => {
 
   const [gender, setGender] = useState('');
@@ -14,11 +14,10 @@ const AddProduct = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState('');
   const [priority, setPriority] = useState('');
-  const[mainCategory,setMainCategory] = useState('')
+  // const[mainCategory,setMainCategory] = useState('')
 
 
 const priorityOptions = ["High", "Medium", "Low"];
-const navigate=useNavigate();
 
 useEffect(() => {
     const fetchMainSections = async () => {
@@ -38,7 +37,6 @@ useEffect(() => {
     try {
       const response = await axios.get(`https://mediatracker-dp6t.onrender.com/api/categories/${choice}`);
       setCategoryOptions(response.data);
-      console.log(response)
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
@@ -85,26 +83,18 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.post
-    ("https://mediatracker-dp6t.onrender.com/api/products", {
+    const response = await axios.post("https://mediatracker-dp6t.onrender.com/api/products", {
       mainSection: gender,
       category,
       subcategory,
       name: productName,
       imageUrls: [imageUrl],
-      price:Number(price),
+      price,
       priority: priority.toLowerCase()
-    },
-     {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-  );
-       
+    });
+    console.log(response.data, 'response');
   } catch (error) {
-    console.log("error invalid", error);
-
+    console.log("error", error);
   }
   setGender('');
   setCategory('');
@@ -123,9 +113,6 @@ const handleSubmit = async (e) => {
   return (
     <div className='add-product-page'>
       <h2 className='page-title'>Add Product Page</h2>
-      <div className='back-btn' onClick={() => navigate(-1)}>
-         ←
-      </div>
 
       <form className='form-container' onSubmit={handleSubmit}>
 
@@ -175,7 +162,7 @@ const handleSubmit = async (e) => {
           <select className='form-select'
           value={subcategory}
           onChange={handleSubcategoryChange} 
-          >
+          required>
             <option value="">Select</option>
            { subcategoryOptions.map((item,index)=>(
             <option

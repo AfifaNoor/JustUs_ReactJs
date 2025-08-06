@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './AllProduct.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Grid } from 'lucide-react';
 
 const AllProduct = () => {
     const [allproduct, setAllProduct] = useState([]);
@@ -51,16 +52,12 @@ const AllProduct = () => {
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
-                    <td>
-                    <a href={product.imageUrls} >
+                    <td >
                     <img 
-                      src={product.imageUrls}
-                      alt={product.name}
-                      style={{ width: '70px', objectFit: 'cover', cursor: 'pointer' }}
-                    />
-                    </a>
-                    </td>
-
+                    src={product.imageUrls}
+                    alt={product.name}  
+                    style={{width: '70px' , objectFit: 'cover'  }}
+                    /></td>
                     <td>{product.price}</td>
                     <td>{product.priority}</td>
                     
@@ -70,6 +67,11 @@ const AllProduct = () => {
        
       </tbody>
     </table>
+    <Grid>
+          <button className='add-product-btn' onClick={() => navigate('/add-product')}>
+            Add Product
+          </button>
+        </Grid>
     </div>
   )
 }

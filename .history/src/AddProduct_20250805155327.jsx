@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './AddProduct.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 const AddProduct = () => {
 
   const [gender, setGender] = useState('');
@@ -18,7 +18,6 @@ const AddProduct = () => {
 
 
 const priorityOptions = ["High", "Medium", "Low"];
-const navigate=useNavigate();
 
 useEffect(() => {
     const fetchMainSections = async () => {

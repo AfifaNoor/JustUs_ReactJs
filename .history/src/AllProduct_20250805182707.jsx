@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const AllProduct = () => {
     const [allproduct, setAllProduct] = useState([]);
     console.log(allproduct,'allproduct');
+    
+
     const navigate=useNavigate();
  
     useEffect(() => {
@@ -51,16 +53,10 @@ const AllProduct = () => {
                     <td>{product.category}</td>
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
-                    <td>
-                    <a href={product.imageUrls} >
-                    <img 
-                      src={product.imageUrls}
-                      alt={product.name}
-                      style={{ width: '70px', objectFit: 'cover', cursor: 'pointer' }}
-                    />
-                    </a>
-                    </td>
-
+                    <td ><img 
+                    src={product.imageUrls}
+                    alt={product.name}  
+                    style={{width: '70px' , objectFit: 'cover'  }}></img></td>
                     <td>{product.price}</td>
                     <td>{product.priority}</td>
                     

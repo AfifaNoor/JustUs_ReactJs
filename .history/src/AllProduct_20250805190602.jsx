@@ -52,15 +52,8 @@ const AllProduct = () => {
                     <td>{product.subcategory}</td>
                     <td>{product.name}</td>
                     <td>
-                    <a href={product.imageUrls} >
-                    <img 
-                      src={product.imageUrls}
-                      alt={product.name}
-                      style={{ width: '70px', objectFit: 'cover', cursor: 'pointer' }}
-                    />
-                    </a>
+                        <img src={product.imageUrls[0]} alt={product.name} className='product-image' />
                     </td>
-
                     <td>{product.price}</td>
                     <td>{product.priority}</td>
                     
