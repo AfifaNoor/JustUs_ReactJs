@@ -1,11 +1,9 @@
 import React, { useState , useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
-import { IterationCcw } from 'lucide-react';
 
 const SubCategory = () => {
   const [subcategory, setSubcategory] = useState([]);
-  
   const {name} = useParams();
   const navigate=useNavigate();
   console.log(name , subcategory,"name")
@@ -34,35 +32,35 @@ const SubCategory = () => {
     fetchCategories();
   }, [name]);
 
-  const handleProduct=(selectedSubcategory)=>{
+  const handleProduct=()=>{
     navigate('/product-showcase',{
       state : {
         mainSection : 'her',
         category : name ,
-        subcategory: selectedSubcategory
+        subcategory: 
       }
     })
   }
 
-return (
+  return (
     <div className='container'>
-      <div className='back-btn' onClick={() => navigate(-1)}>
-      ←
-      </div>
-      <h2>{name}</h2>
-      <ul className='subcategory-list'>
+   <div className='back-btn' onClick={() => navigate(-1)}>
+    ←
+</div>
+    <h2>{name} </h2>
+    <ul className='subcategory-list'  onClick={handleProduct}>
         {subcategory.length > 0 ? (
           subcategory.map((item, index) => (
-            <li key={index} onClick={() => handleProduct(item)}>
-              {item}
+            <li key={index}>{item}
             </li>
           ))
         ) : (
           <li>No subcategories available</li>
-)}
+        )}
       </ul>
+
     </div>
-  );
-};
+  )
+}
 
 export default SubCategory

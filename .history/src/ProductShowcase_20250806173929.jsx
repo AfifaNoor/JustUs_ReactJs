@@ -24,7 +24,7 @@
                 }
             }
             fetchFilteredProduct();
-        },[mainSection,category,subcategory])
+        },[])
 
     return (
         <div>

@@ -34,12 +34,12 @@ const SubCategory = () => {
     fetchCategories();
   }, [name]);
 
-  const handleProduct=(selectedSubcategory)=>{
+  const handleProduct=()=>{
     navigate('/product-showcase',{
       state : {
         mainSection : 'her',
         category : name ,
-        subcategory: selectedSubcategory
+        subcategory: subcategory
       }
     })
   }
@@ -59,7 +59,7 @@ return (
           ))
         ) : (
           <li>No subcategories available</li>
-)}
+        )}
       </ul>
     </div>
   );

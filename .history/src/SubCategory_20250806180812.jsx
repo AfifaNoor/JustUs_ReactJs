@@ -34,35 +34,35 @@ const SubCategory = () => {
     fetchCategories();
   }, [name]);
 
-  const handleProduct=(selectedSubcategory)=>{
+  const handleProduct=()=>{
     navigate('/product-showcase',{
       state : {
         mainSection : 'her',
         category : name ,
-        subcategory: selectedSubcategory
+        subcategory: subcategory
       }
     })
   }
 
-return (
+  return (
     <div className='container'>
-      <div className='back-btn' onClick={() => navigate(-1)}>
-      ←
-      </div>
-      <h2>{name}</h2>
-      <ul className='subcategory-list'>
+   <div className='back-btn' onClick={() => navigate(-1)}>
+    ←
+</div>
+    <h2>{name} </h2>
+    <ul className='subcategory-list'  >
         {subcategory.length > 0 ? (
           subcategory.map((item, index) => (
-            <li key={index} onClick={() => handleProduct(item)}>
-              {item}
+            <li key={index}>{item} onClick={() => handleProduct(item)}
             </li>
           ))
         ) : (
           <li>No subcategories available</li>
-)}
+        )}
       </ul>
+
     </div>
-  );
-};
+  )
+}
 
 export default SubCategory

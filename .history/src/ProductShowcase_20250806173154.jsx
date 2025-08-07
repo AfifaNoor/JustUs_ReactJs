@@ -24,7 +24,7 @@
                 }
             }
             fetchFilteredProduct();
-        },[mainSection,category,subcategory])
+        },[])
 
     return (
         <div>
@@ -34,7 +34,6 @@
             <img src={product.imageUrls} alt=''/>
             <h2>{product.name}</h2>
             <p>{product.price}</p>
-            <p>{product.subcategories}</p>
 
             </div>
         ))}

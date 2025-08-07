@@ -59,7 +59,7 @@ return (
           ))
         ) : (
           <li>No subcategories available</li>
-)}
+        )}
       </ul>
     </div>
   );
