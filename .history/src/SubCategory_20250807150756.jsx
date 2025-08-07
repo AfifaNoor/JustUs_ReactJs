@@ -1,9 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
-// import { IterationCcw } from 'lucide-react';
-import './SubCategory.css'
-
+import { IterationCcw } from 'lucide-react';
 
 const SubCategory = () => {
   const [subcategory, setSubcategory] = useState([]);
@@ -51,23 +49,22 @@ return (
       <div className='back-btn' onClick={() => navigate(-1)}>
       ←
       </div>
-  <div className="subcategory-btn-container">
+      <h2>{name}</h2>
+      <ul className='subcategory-list'>
   {subcategory.length > 0 ? (
     subcategory.map((item, index) => (
-      <button
-        key={index}
-        className="subcategory-btn"
-        onClick={() => handleProduct(item)}
-      >
-        {item}
-      </button>
+      <li key={index}>
+        <button onClick={() => handleProduct(item)}>
+          {item}
+        </button>
+      </li>
     ))
   ) : (
-    <button className="subcategory-btn" disabled>
-      No subcategories available
-    </button>
+    <li>
+      <button disabled>No subcategories available</button>
+    </li>
   )}
-</div>
+</ul>
 
     </div>
   );

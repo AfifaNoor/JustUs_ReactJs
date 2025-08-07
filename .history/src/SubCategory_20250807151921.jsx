@@ -51,23 +51,22 @@ return (
       <div className='back-btn' onClick={() => navigate(-1)}>
       ←
       </div>
-  <div className="subcategory-btn-container">
-  {subcategory.length > 0 ? (
-    subcategory.map((item, index) => (
-      <button
-        key={index}
-        className="subcategory-btn"
-        onClick={() => handleProduct(item)}
-      >
-        {item}
-      </button>
-    ))
-  ) : (
-    <button className="subcategory-btn" disabled>
-      No subcategories available
+      <h2>{name}</h2>
+      {subcategory.length > 0 ? (
+       subcategory.map((item, index) => (
+    <button
+      key={index}
+      className='subcategory-btn'
+      onClick={() => handleProduct(item)}
+    >
+      {item}
     </button>
-  )}
-</div>
+  ))
+) : (
+  <button className='subcategory-btn' disabled>
+    No subcategories available
+  </button>
+)}
 
     </div>
   );

@@ -52,19 +52,6 @@ body {
   
 
 }
-.subcategory-btn:hover {
-  background: linear-gradient(180deg, #E03A7A 0%, #8A0040 100%);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(138, 0, 64, 0.3);
-}
-.subcategory-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #FFEFF4, #FDEAEF);
-}
 
 .subcategory-btn:hover {
   background: linear-gradient(180deg, #E03A7A 0%, #8A0040 100%);
