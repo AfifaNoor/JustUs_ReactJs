@@ -6,17 +6,18 @@ import './SubCategory.css'
 
 const SubCategory = () => {
   const [subcategory, setSubcategory] = useState([]);
-  const[categoryName , setCategoryname] =useState('');
+  const[categoryName , setCategoryname] =useState('')
+  console.log(categoryName,'categoryName')
   
   const {name} = useParams();
   const navigate=useNavigate();
-  console.log(name ,"name786")
+  console.log(name , subcategory,"name")
    
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          `https://mediatracker-dp6t.onrender.com/api/categories/her`);
+          'https://mediatracker-dp6t.onrender.com/api/categories/her');
 
           console.log(response.data ,'data')
         const filterCategory = response.data.find(
@@ -24,8 +25,8 @@ const SubCategory = () => {
         );
         setSubcategory(filterCategory.subcategories);
         setCategoryname(filterCategory.name)
-        // console.log(filterCategory.subcategories, 'subcategory')
-        // console.log(filterCategory.name, 'setCategoryname')
+        console.log(filterCategory.subcategories, 'subcategory')
+        console.log(filterCategory.name, 'setCategoryname')
         
         
       } catch (error) {
@@ -37,17 +38,15 @@ const SubCategory = () => {
     fetchCategories();
   }, [name]);
 
- const handleProduct = (selectedSubcategory) => {
-  console.log("Selected subcategory", subcategory);
-  navigate('/product-showcase', {
-    state: {
-      mainSection: 'her',
-      category: categoryName,
-      subcategory: selectedSubcategory
-    }
-  });
-};
-
+  const handleProduct=(selectedSubcategory)=>{
+    navigate('/product-showcase',{
+      state : {
+        mainSection : 'her',
+        category : name ,
+        subcategory: selectedSubcategory
+      }
+    })
+  }
 
 return (
     <div className='container'>

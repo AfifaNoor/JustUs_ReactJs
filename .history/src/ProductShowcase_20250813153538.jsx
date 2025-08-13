@@ -27,7 +27,7 @@
 
     return (
         <div className='product-showcase'>
-         <div className='back-btn' onClick={() => navigate('/product-showcase/-1')}>
+         <div className='back-btn' onClick={() => navigate('-1')}>
           ←
         </div>
         {products.map((product,index)=>(

@@ -1,6 +1,6 @@
-    import React, { useEffect, useState} from 'react';
+    import React, { useEffect, useState } from 'react';
     import axios from 'axios';
-    import { useLocation, useNavigate } from 'react-router-dom';
+    import { useLocation } from 'react-router-dom';
 
     const ProductShowcase = () => {
         const[products,setProducts]=useState([]);
@@ -9,7 +9,10 @@
         const {mainSection,category,subcategory} = location.state
         console.log(location.state.category,'location')
          console.log("Selected subcategory:", subcategory);
-        const navigate = useNavigate();
+        
+
+        
+
 
         useEffect(()=>{
             const fetchFilteredProduct = async () =>{
@@ -27,7 +30,7 @@
 
     return (
         <div className='product-showcase'>
-         <div className='back-btn' onClick={() => navigate('/product-showcase/-1')}>
+         <div className='back-btn' onClick={() => navigate('-1')}>
           ←
         </div>
         {products.map((product,index)=>(

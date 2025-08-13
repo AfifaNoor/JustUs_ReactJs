@@ -35,7 +35,7 @@ const HisSubcategory = () => {
     fetchHisSubcategory();
   }, [name]);
 
-  const handleProduct = (selectedSubcategory) => {
+   const handleProduct = (selectedSubcategory) => {
   console.log("Selected subcategory", hissubcategory);
   navigate('/product-showcase', {
 
@@ -49,7 +49,7 @@ const HisSubcategory = () => {
 
   return (
     <div className='container'>
-      <div className='back-btn' onClick={() => navigate('/home/his-category')}>
+      <div className='back-btn' onClick={() => navigate('/his-category')}>
         ←
       </div>
       <h2>{name}</h2>
@@ -59,7 +59,6 @@ const HisSubcategory = () => {
             <button key={index} onClick={() => handleProduct(item)}>
               {item}
             </button>
-            
           ))
         ) : (
           <div>No subcategories found.</div>

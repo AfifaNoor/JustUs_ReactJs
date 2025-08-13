@@ -59,7 +59,6 @@ const HisSubcategory = () => {
             <button key={index} onClick={() => handleProduct(item)}>
               {item}
             </button>
-            
           ))
         ) : (
           <div>No subcategories found.</div>

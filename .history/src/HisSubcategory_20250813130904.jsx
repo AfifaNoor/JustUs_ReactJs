@@ -4,10 +4,6 @@ import axios from 'axios';
 
 const HisSubcategory = () => {
   const [hissubcategory, setHissubcategory] = useState([]);
-  const [categoryName, setCategoryname] = useState('');
-  console.log(hissubcategory, 'hissubcategory');
-  console.log(categoryName, 'categoryName');
-
   const { name } = useParams();
   const navigate = useNavigate();
   console.log(hissubcategory,name,'hissubcategory')
@@ -24,7 +20,6 @@ const HisSubcategory = () => {
           (category) => category.name.toLowerCase() === name.toLowerCase()
         );
         setHissubcategory(filterCategory.subcategories);
-        setCategoryname(filterCategory.name);
         console.log(setHissubcategory,'subcategory')
       } catch (error) {
         console.error('Error', error);
@@ -35,12 +30,10 @@ const HisSubcategory = () => {
     fetchHisSubcategory();
   }, [name]);
 
-  const handleProduct = (selectedSubcategory) => {
-  console.log("Selected subcategory", hissubcategory);
-  navigate('/product-showcase', {
-
+   const handleProduct = (selectedSubcategory) => {
+  console.log("Selected subcategory", hissubcategory
     state: {
-      mainSection: 'his',
+      mainSection: 'her',
       category: categoryName,
       subcategory: selectedSubcategory
     }
@@ -49,22 +42,19 @@ const HisSubcategory = () => {
 
   return (
     <div className='container'>
-      <div className='back-btn' onClick={() => navigate('/home/his-category')}>
+      <div className='back-btn' onClick={() => navigate('/his-category')}>
         ←
       </div>
       <h2>{name}</h2>
-      <div className='subcategories-list'>
+      <ul className='subcategories-list'>
         {hissubcategory.length > 0 ? (
           hissubcategory.map((item, index) => (
-            <button key={index} onClick={() => handleProduct(item)}>
-              {item}
-            </button>
-            
+            <li key={index}>{item}</li>
           ))
         ) : (
-          <div>No subcategories found.</div>
+          <li>No subcategories found.</li>
         )}
-      </div>
+      </ul>
     </div>
   );
 };

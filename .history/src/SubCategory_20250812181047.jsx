@@ -24,8 +24,8 @@ const SubCategory = () => {
         );
         setSubcategory(filterCategory.subcategories);
         setCategoryname(filterCategory.name)
-        // console.log(filterCategory.subcategories, 'subcategory')
-        // console.log(filterCategory.name, 'setCategoryname')
+        console.log(filterCategory.subcategories, 'subcategory')
+        console.log(filterCategory.name, 'setCategoryname')
         
         
       } catch (error) {

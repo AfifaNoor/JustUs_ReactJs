@@ -7,6 +7,10 @@ import './SubCategory.css'
 const SubCategory = () => {
   const [subcategory, setSubcategory] = useState([]);
   const[categoryName , setCategoryname] =useState('');
+  const[selectedSubcategory, setSelectedSubcategory] = useState('');
+  console.log(subcategory,'subcategory')
+  console.log(selectedSubcategory,'selectedSubcategory')
+  console.log(categoryName,'categoryName')
   
   const {name} = useParams();
   const navigate=useNavigate();
@@ -24,8 +28,8 @@ const SubCategory = () => {
         );
         setSubcategory(filterCategory.subcategories);
         setCategoryname(filterCategory.name)
-        // console.log(filterCategory.subcategories, 'subcategory')
-        // console.log(filterCategory.name, 'setCategoryname')
+        console.log(filterCategory.subcategories, 'subcategory')
+        console.log(filterCategory.name, 'setCategoryname')
         
         
       } catch (error) {
@@ -37,17 +41,18 @@ const SubCategory = () => {
     fetchCategories();
   }, [name]);
 
- const handleProduct = (selectedSubcategory) => {
-  console.log("Selected subcategory", subcategory);
-  navigate('/product-showcase', {
-    state: {
-      mainSection: 'her',
-      category: categoryName,
-      subcategory: selectedSubcategory
-    }
-  });
-};
+  const handleProduct=(selectedSubcategory)=>{
+     console.log("Clicked subcategory", selectedSubcategory);
 
+
+    navigate(`/product-showcase/${selectedSubcategory}`,{
+      state : {
+        mainSection : 'her',
+        category : categoryName ,
+        subcategory: selectedSubcategory,
+      }
+    })
+  }
 
 return (
     <div className='container'>

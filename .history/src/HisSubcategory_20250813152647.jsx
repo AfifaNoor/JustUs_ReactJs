@@ -49,7 +49,7 @@ const HisSubcategory = () => {
 
   return (
     <div className='container'>
-      <div className='back-btn' onClick={() => navigate('/home/his-category')}>
+      <div className='back-btn' onClick={() => navigate('-1')}>
         ←
       </div>
       <h2>{name}</h2>
@@ -59,7 +59,6 @@ const HisSubcategory = () => {
             <button key={index} onClick={() => handleProduct(item)}>
               {item}
             </button>
-            
           ))
         ) : (
           <div>No subcategories found.</div>
